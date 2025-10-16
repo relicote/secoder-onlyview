@@ -1,4 +1,4 @@
-# **App Name**: Secoder Cyber Solutions
+# **Nome do APP**: Secoder
 
 ## Core Features:
 
@@ -10,7 +10,7 @@
 - Contact Form: Provide a contact form for users to request expert assistance.
 - Social Media Integration: Link to social media profiles (Facebook, Instagram, TikTok, X/Twitter) for wider audience engagement.
 
-## Style Guidelines:
+## Style:
 
 - Primary color: Electric blue (#7DF9FF) to convey a sense of technology and innovation.
 - Background color: Dark gray (#1E1E1E) for a modern, tech-focused feel, complementing the original image.
