@@ -7,16 +7,18 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Input } from '@/components/ui/input';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
+import imageHeader from '../images/image-header.png'
+import imageNavbar from '../images/navbar-logo.png'
 
-const Header = () => (
-  <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm">
-    <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
+const Navbar = () => (
+  <header className="fixed top-0 left-0 right-0 z-50">
+    <div className="container mx-auto flex h-20 items-center justify-center gap-2 px-6 sm:px-6 lg:px-8">
       <Link href="/">
         <Image
-          src="https://iili.io/KkrrDYb.png"
+          src={imageNavbar}
           alt="Secoder Logo"
-          width={150}
-          height={40}
+          width={176}
+          height={43}
           className="h-10 w-auto"
         />
       </Link>
@@ -25,7 +27,7 @@ const Header = () => (
         <Link href="#specialties" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Nossas Especialidades</Link>
         <Link href="#faq" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Perguntas Frequentes</Link>
       </nav>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center justify-end gap-4">
         <Link href="#" aria-label="Facebook"><Facebook className="h-5 w-5 text-foreground/80 hover:text-primary transition-colors" /></Link>
         <Link href="#" aria-label="Instagram"><Instagram className="h-5 w-5 text-foreground/80 hover:text-primary transition-colors" /></Link>
         <Link href="#" aria-label="YouTube"><Youtube className="h-5 w-5 text-foreground/80 hover:text-primary transition-colors" /></Link>
@@ -143,13 +145,13 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <Header />
+      <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 z-0 opacity-30">
             <Image
-              src="https://iili.io/KkrhUkF.png"
+              src={imageHeader}
               alt="Secoder Mascot"
               fill
               className="object-cover"
