@@ -12,17 +12,16 @@ import imageNavbar from '../images/navbar-logo.png'
 
 const Navbar = () => (
   <header className="fixed top-0 left-0 right-0 z-50">
-    <div className="container mx-auto flex h-20 items-center justify-center gap-2 px-6 sm:px-6 lg:px-8">
-      <Link href="/">
-        <Image
-          src={imageNavbar}
-          alt="Secoder Logo"
-          width={176}
-          height={43}
-          className="h-10 w-auto"
-        />
-      </Link>
-      <nav className="hidden md:flex items-center gap-8">
+    <div className="container mx-auto flex h-[91px] w-full max-w-[1920] items-center justify-around gap-2 sm:px-6 lg:px-8">
+        <Link href="/">
+          <Image
+            src={imageNavbar}
+            alt="Secoder Logo"
+            width={176}
+            height={43}
+          />
+        </Link>
+      <nav className="hidden md:flex items-center justify-center gap-8">
         <Link href="#tools" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Nossas Ferramentas</Link>
         <Link href="#specialties" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Nossas Especialidades</Link>
         <Link href="#faq" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Perguntas Frequentes</Link>
@@ -148,7 +147,15 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <section className="relative pt-48 pb-20 lg:pt-48 lg:pb-32 overflow-hidden max-w-[1920]">
+          <div className="absolute inset-0 -z-10">
+             <div className="absolute inset-0
+                    bg-[linear-gradient(to_right,#4f4f4f2e 1px,transparent 1px),
+                         linear-gradient(to_bottom,#4f4f4f2e 1px,transparent 1px)]
+                    bg-[size:30px_30px]
+                    [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000 70%,transparent 100%)]
+                    [-webkit-mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000 70%,transparent 100%)]"></div>
+          </div>
           <div className="absolute inset-0 z-0 opacity-30">
             <Image
               src={imageHeader}
@@ -159,9 +166,6 @@ export default function Home() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
           </div>
-          <div className="absolute inset-0 -z-10">
-             <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-          </div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="text-center md:text-left z-10">
@@ -169,24 +173,27 @@ export default function Home() {
                   <ShieldCheck className="mr-2 h-4 w-4" />
                   Secoder Especialistas em Pentest
                 </Badge>
-                <h1 className="text-4xl md:text-6xl font-black text-foreground tracking-tight font-headline animate-fade-in-down">
-                  Em tempo real, rápida detecção,
-                  <span className="text-primary block"> elimine riscos</span>
-                </h1>
-                <p className="mt-6 max-w-xl text-lg text-muted-foreground animate-fade-in-up">
+<h1 className="text-4xl md:text-7xl mt-2 font-headline font-medium tracking-tight animate-fade-in-down text-foreground">
+  Em tempo real,<br />
+  rápida detecção,
+  <span className="block bg-gradient-to-b from-[#a7b9e8] from-5% to-[#7c98de] to-100% bg-clip-text text-transparent">
+    elimine riscos
+  </span>
+</h1>
+                <p className="mt-6 max-w-xl text-lg text-muted-foreground animate-fade-in-up font-body font-normal ">
                   Monitore em tempo real, detecte ameaças com rapidez e elimine riscos antes que se tornem problemas.
                 </p>
                 <div className="mt-10 flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4 animate-fade-in-up">
-                  <Button size="lg" asChild className="transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
+                  <Button size="lg" asChild className="transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 font-normal rounded-full bg-gray-900">
                     <Link href="#contact">
                       <Mail />
                       Fale com um especialista
                       <MoveRight />
                     </Link>
                   </Button>
-                  <Button size="lg" variant="outline" asChild className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105">
+                  <p className="transition-all duration-300 hover:scale-105">
                     <Link href="#faq">Tem dúvida?</Link>
-                  </Button>
+                  </p>
                 </div>
               </div>
               <div>
