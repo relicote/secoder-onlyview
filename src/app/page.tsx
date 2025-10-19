@@ -1,10 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Facebook,
-  Instagram,
-  Twitter,
-  Youtube,
   Mail,
   Phone,
   MoveRight,
@@ -30,51 +26,8 @@ import { Input } from "@/components/ui/input";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Badge } from "@/components/ui/badge";
 import imageHeader from "../images/logo-header.png";
-import imageNavbar from "../images/navbar-logo.png";
+import Navbar from "@/components/navbar";
 
-const Navbar = () => (
-  <header className="fixed top-0 left-0 right-0 z-50">
-    <div className="container mx-auto flex h-[91px] w-full max-w-[1920] items-center justify-around gap-2 sm:px-6 lg:px-8">
-      <nav className="hidden md:flex items-center justify-center gap-8">
-        <Link href="/">
-          <Image src={imageNavbar} alt="Secoder Logo" width={176} height={43} />
-        </Link>
-        <Link
-          href="#tools"
-          className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-        >
-          Nossas Ferramentas
-        </Link>
-        <Link
-          href="#specialties"
-          className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-        >
-          Nossas Especialidades
-        </Link>
-        <Link
-          href="#faq"
-          className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-        >
-          Perguntas Frequentes
-        </Link>
-      </nav>
-      <div className="flex items-center justify-end gap-4">
-        <Link href="#" aria-label="Facebook">
-          <Facebook className="h-5 w-5 text-foreground/80 hover:text-primary transition-colors" />
-        </Link>
-        <Link href="#" aria-label="Instagram">
-          <Instagram className="h-5 w-5 text-foreground/80 hover:text-primary transition-colors" />
-        </Link>
-        <Link href="#" aria-label="YouTube">
-          <Youtube className="h-5 w-5 text-foreground/80 hover:text-primary transition-colors" />
-        </Link>
-        <Link href="#" aria-label="Twitter">
-          <Twitter className="h-5 w-5 text-foreground/80 hover:text-primary transition-colors" />
-        </Link>
-      </div>
-    </div>
-  </header>
-);
 
 const Footer = () => (
   <footer id="contact" className="bg-gray-900/50 border-t border-border/50">
