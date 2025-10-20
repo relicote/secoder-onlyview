@@ -245,29 +245,24 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative pt-48 pb-20 lg:pt-48 lg:pb-32 overflow-hidden max-w-[1920]">
+        <section className="relative pt-48 pb-20 lg:pt-24 lg:pb-32 overflow-hidden max-w-[1920px]">
+          {/* Fundo */}
           <div className="absolute inset-0 -z-10">
             <div
               className="absolute inset-0
-                    bg-[linear-gradient(to_right,#4f4f4f2e 1px,transparent 1px),
-                         linear-gradient(to_bottom,#4f4f4f2e 1px,transparent 1px)]
-                    bg-[size:30px_30px]
-                    [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000 70%,transparent 100%)]
-                    [-webkit-mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000 70%,transparent 100%)]"
+        bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),
+             linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)]
+        bg-[size:30px_30px]
+        [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]
+        [-webkit-mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
             ></div>
           </div>
-          <div className="absolute inset-0 z-0 ">
-            <Image
-              src={imageHeader}
-              alt="Secoder Mascot"
-              data-ai-hint="mascot illustration"
-              style={{display: "block", height: "100%", objectFit: "cover" }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
-          </div>
+
+          {/* Conteúdo */}
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="text-center md:text-left z-10">
+              {/* Texto à esquerda */}
+              <div className="text-center md:text-left md:ml-16">
                 <Badge
                   variant="outline"
                   className="mb-4 border-primary/20 bg-primary/10 text-primary"
@@ -275,6 +270,7 @@ export default function Home() {
                   <ShieldCheck className="mr-2 h-4 w-4" />
                   Secoder Especialistas em Pentest
                 </Badge>
+
                 <h1 className="text-4xl md:text-7xl mt-2 font-headline font-medium tracking-tight animate-fade-in-down text-foreground">
                   Em tempo real,
                   <br />
@@ -283,10 +279,12 @@ export default function Home() {
                     elimine riscos
                   </span>
                 </h1>
-                <p className="mt-6 max-w-xl text-lg text-muted-foreground animate-fade-in-up font-body font-normal ">
+
+                <p className="mt-6 max-w-xl text-lg text-muted-foreground animate-fade-in-up font-body font-normal">
                   Monitore em tempo real, detecte ameaças com rapidez e elimine
                   riscos antes que se tornem problemas.
                 </p>
+
                 <div className="mt-10 flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4 animate-fade-in-up">
                   <Button
                     size="lg"
@@ -304,11 +302,29 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div>
-                {/* Placeholder for the right column to maintain layout */}
+
+              {/* Imagem à direita */}
+              <div className="relative flex justify-center md:justify-start md:translate-x-[80px]">
+                <Image
+                  src={imageHeader}
+                  alt="Secoder Mascot"
+                  className="w-[500px] h-auto object-contain "
+                  priority
+                />
+
+                <div
+                  className="pointer-events-none absolute right-0 bottom-[-32px] z-[40]
+               w-[125%] h-[300px]
+               bg-[radial-gradient(120%_65%_at_75%_100%,hsl(var(--background))_0%,hsl(var(--background)/0.92)_35%,hsl(var(--background)/0.8)_55%,transparent_75%)]"
+                />
               </div>
             </div>
           </div>
+
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-48 z-[30]
+                bg-gradient-to-t from-background via-background/80 to-transparent"
+          />
         </section>
 
         {/* Specialties Section */}
