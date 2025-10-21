@@ -31,6 +31,7 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Badge } from "@/components/ui/badge";
 import imageHeader from "../images/logo-header.png";
 import imageNavbar from "../images/navbar-logo.png";
+import simboloFundo from "../images/simbolo-fundo.svg";
 
 const Navbar = () => (
   <header className="fixed top-0 left-0 right-0 z-50">
@@ -245,17 +246,32 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative pt-48 pb-20 lg:pt-24 lg:pb-32 overflow-hidden max-w-[1920px]">
+        <section className="relative pt-48 pb-20 lg:pt-32 lg:pb-32 overflow-hidden max-w-[1920px]">
           {/* Fundo */}
           <div className="absolute inset-0 -z-10">
-            <div
-              className="absolute inset-0
-        bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),
-             linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)]
-        bg-[size:30px_30px]
-        [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]
-        [-webkit-mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
-            ></div>
+                  <div
+                          className="absolute inset-0
+                    bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),
+                        linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)]
+                    bg-[size:30px_30px]
+                    [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]
+                    [-webkit-mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
+                        >
+                  </div>
+          </div>
+
+              <div
+                  className="pointer-events-none absolute right-[23%] bottom-[25%] z-[5] 
+                            opacity-5 scale-[2.5]
+                            mix-blend-lighten"
+                >
+                  <Image
+                    src={simboloFundo} 
+                    alt="Símbolo Secoder"
+                    width={400}
+                    height={400}
+                    className="object-contain"
+                  />
           </div>
 
           {/* Conteúdo */}
@@ -263,13 +279,43 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               {/* Texto à esquerda */}
               <div className="text-center md:text-left md:ml-16">
-                <Badge
-                  variant="outline"
-                  className="mb-4 border-primary/20 bg-primary/10 text-primary"
-                >
-                  <ShieldCheck className="mr-2 h-4 w-4" />
-                  Secoder Especialistas em Pentest
-                </Badge>
+<Badge
+  variant="outline"
+  className="
+    inline-flex items-center gap-2 rounded-full
+    bg-[#191c24] ring-1 ring-[#191c24]
+    backdrop-blur px-2.5 py-1.5
+    text-[#d4e1ff] font-normal
+  "
+>
+  {/* Pill 'Novo' à esquerda */}
+  <span
+    className="
+      inline-flex items-center gap-1
+      rounded-full px-2 py-0.5
+      text-[11px] font-normal
+      bg-[#195bff] text-white ring-1 ring-[#195bff]
+    "
+  >
+    <Image
+      src={simboloFundo}
+      alt="Símbolo Secoder"
+      width={14}
+      height={14}
+      className="h-3.5 w-3.5 object-contain"
+    />
+    Novo
+  </span>
+
+  {/* Texto do badge */}
+  <span className="text-sm text-[#d4e1ff] font-normal tracking-wide">
+    Secoder Especialistas em Pentest
+  </span>
+</Badge>
+
+
+
+
 
                 <h1 className="text-4xl md:text-7xl mt-2 font-headline font-medium tracking-tight animate-fade-in-down text-foreground">
                   Em tempo real,
