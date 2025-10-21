@@ -138,7 +138,21 @@ export default function Home() {
                     height={400}
                     className="object-contain"
                   />
-          </div>
+                </div>
+                
+              <div
+                  className="pointer-events-none absolute right-[-12%] bottom-[75%] z-[5] 
+                            opacity-5 scale-[2.5] rotate-[55deg]
+                            mix-blend-lighten"
+                >
+                  <Image
+                    src={simboloFundo} 
+                    alt="Símbolo Secoder"
+                    width={400}
+                    height={400}
+                    className="object-contain"
+                  />
+                </div>
 
           {/* Conteúdo */}
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
