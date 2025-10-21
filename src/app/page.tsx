@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  Facebook,
+  Instagram,
+  Twitter,
+  Youtube,
   Mail,
   Phone,
   MoveRight,
@@ -347,8 +351,7 @@ export default function Home() {
               {/* Imagem à direita */}
               <div className="relative flex justify-center md:justify-start md:translate-x-[80px]">
                 <Image
-                  src={image
-                      }
+                  src={imageHeader}
                   alt="Secoder Mascot"
                   className="w-[500px] h-auto object-contain "
                   priority
