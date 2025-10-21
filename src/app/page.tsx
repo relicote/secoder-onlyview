@@ -338,7 +338,6 @@ export default function Home() {
                     className="transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 font-normal rounded-full bg-gray-900"
                   >
                     <Link href="#contact">
-                      <Mail />
                       Fale com um especialista
                       <MoveRight />
                     </Link>
