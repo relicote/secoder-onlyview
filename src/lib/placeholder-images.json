@@ -8,26 +8,26 @@
     },
     {
       "id": "tool-1",
-      "description": "Illustration for Real-Time Monitoring tool.",
-      "imageUrl": "https://picsum.photos/seed/tool1/600/600",
+      "description": "Teste de SVG",
+      "imageUrl": "/images/audit.svg",
       "imageHint": "network server"
     },
     {
       "id": "tool-2",
       "description": "Illustration for Vulnerability Scanner tool.",
-      "imageUrl": "https://picsum.photos/seed/tool2/600/600",
+      "imageUrl": "/images/vigilant.svg",
       "imageHint": "security code"
     },
     {
       "id": "tool-3",
       "description": "Illustration for Phishing Simulator tool.",
-      "imageUrl": "https://picsum.photos/seed/tool3/600/600",
+      "imageUrl": "/images/critic.svg",
       "imageHint": "phishing email"
     },
     {
       "id": "tool-4",
       "description": "Illustration for FAQ Knowledge Base tool.",
-      "imageUrl": "https://picsum.photos/seed/tool4/600/600",
+      "imageUrl": "/images/alert.svg",
       "imageHint": "knowledge base"
     },
     {
