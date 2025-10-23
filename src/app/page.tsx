@@ -335,81 +335,81 @@ export default function Home() {
         </section>
 
         {/* Phishing Test Section */}
-<section className="py-20 bg-background">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-8">
-    <div className="flex justify-center">
-      <span className="inline-block px-2.5 py-1.5 mb-2 border border-[#191c24] bg-[#0e1016] rounded-full text-sm text-[#D3E0FF] font-normal tracking-wide text-center">
-        Secoder Especialistas em Pentest
-      </span>
-    </div>
-
-    <h2
-      className="text-4xl md:text-6xl mb-2 font-normal text-center font-headline
-     bg-gradient-to-b from-[#FFFFFF] via-[#FFFFFF] to-[#7491db]/80
-     text-transparent bg-clip-text"
-    >
-      Garanta que seu time saiba se prevenir <br /> de ataques de engenharia
-      social.
-    </h2>
-
-    {/* Card principal */}
-    <div className="w-full max-w-[1216px] mx-auto relative z-[2]">
-      <Card
-        className="relative bg-[#08090C] border border-[#191c24] rounded-[40px] p-8 shadow-[inset_0px_4px_32px_rgba(255,255,255,0.04)] flex items-center justify-center"
-        style={{ height: "270px" }}
-      >
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full">
-          {/* Ícone circular + textos */}
-          <div className="flex items-center justify-center gap-6">
-            <div className="hidden md:flex items-center justify-center bg-gradient-to-br from-[#242631] to-[#04050B] w-[164px] h-[164px] rounded-full border border-[rgba(255,255,255,0.06)] shadow-[inset_0px_4px_32px_rgba(255,255,255,0.04)]">
-              <Image
-                src={simboloAzul}
-                alt="Símbolo Azul"
-                width={82}
-                height={82}
-                className="object-contain"
-              />
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-8">
+            <div className="flex justify-center">
+              <span className="inline-block px-2.5 py-1.5 mb-2 border border-[#191c24] bg-[#0e1016] rounded-full text-sm text-[#D3E0FF] font-normal tracking-wide text-center">
+                Secoder Especialistas em Pentest
+              </span>
             </div>
 
-            <div className="flex flex-col justify-center">
-<span
-  className="inline-flex items-center justify-center mb-2 
+            <h2
+              className="text-4xl md:text-6xl mb-2 font-normal text-center font-headline
+     bg-gradient-to-b from-[#FFFFFF] via-[#FFFFFF] to-[#7491db]/80
+     text-transparent bg-clip-text"
+            >
+              Garanta que seu time saiba se prevenir <br /> de ataques de
+              engenharia social.
+            </h2>
+
+            {/* Card principal */}
+            <div className="w-full max-w-[1216px] mx-auto relative z-[2]">
+              <Card
+                className="relative bg-[#08090C] border border-[#191c24] rounded-[40px] p-8 shadow-[inset_0px_4px_32px_rgba(255,255,255,0.04)] flex items-center justify-center"
+                style={{ height: "270px" }}
+              >
+                <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full">
+                  {/* Ícone circular + textos */}
+                  <div className="flex items-center justify-center gap-6">
+                    <div className="hidden md:flex items-center justify-center bg-gradient-to-br from-[#242631] to-[#04050B] w-[164px] h-[164px] rounded-full border border-[rgba(255,255,255,0.06)] shadow-[inset_0px_4px_32px_rgba(255,255,255,0.04)]">
+                      <Image
+                        src={simboloAzul}
+                        alt="Símbolo Azul"
+                        width={82}
+                        height={82}
+                        className="object-contain"
+                      />
+                    </div>
+
+                    <div className="flex flex-col justify-center ml-6">
+                      <span
+                        className="inline-flex items-center justify-center mb-2 
              bg-[#1A5CFF] border border-[#1A5CFF] text-white 
              rounded-full text-[15px] font-medium 
              leading-[1] tracking-tight 
              px-[4px] py-[1px] h-[22px] w-fit"
->
-  <Image
-    src={simboloFundo}
-    alt="Símbolo Secoder"
-    width={14}
-    height={14}
-    className="h-[14px] w-[14px] object-contain mr-[3px]"
-  />
-  Online
-</span>
+                      >
+                        <Image
+                          src={simboloFundo}
+                          alt="Símbolo Secoder"
+                          width={14}
+                          height={14}
+                          className="h-[14px] w-[14px] object-contain mr-[3px]"
+                        />
+                        Online
+                      </span>
 
-              <h3 className="text-[56px] leading-[100%] font-normal font-headline text-[#D3E0FF] tracking-[-0.06em] text-left">
-                Teste <br /> de phishing
-              </h3>
+                      <h3 className="text-[56px] leading-[100%] font-normal font-headline text-[#D3E0FF] tracking-[-0.06em] text-left">
+                        Teste <br /> de phishing
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Descrição */}
+                  <p className="text-[#747B8C] text-[18px] leading-[150%] max-w-[576px] text-left">
+                    Teste avançado de phishing para identificar todas as
+                    vulnerabilidades no projeto e mitigar qualquer risco
+                    associado. O objetivo é detectar e eliminar quaisquer falhas
+                    humanas que possam ser exploradas por agentes maliciosos.
+                    Vamos garantir que todas as medidas de segurança sejam
+                    implementadas de forma eficaz para proteger seu sistema e
+                    dados contra ataques cibernéticos.
+                  </p>
+                </div>
+              </Card>
             </div>
           </div>
-
-          {/* Descrição */}
-          <p className="text-[#747B8C] text-[18px] leading-[150%] max-w-[576px] text-left">
-            Teste avançado de phishing para identificar todas as
-            vulnerabilidades no projeto e mitigar qualquer risco associado. O
-            objetivo é detectar e eliminar quaisquer falhas humanas que possam
-            ser exploradas por agentes maliciosos. Vamos garantir que todas as
-            medidas de segurança sejam implementadas de forma eficaz para
-            proteger seu sistema e dados contra ataques cibernéticos.
-          </p>
-        </div>
-      </Card>
-    </div>
-  </div>
-</section>
-
+        </section>
 
         {/* FAQ Section */}
         <section id="faq" className="py-20 bg-background">
