@@ -241,7 +241,7 @@ export default function Home() {
           />
         </section>
 
-        {/* Specialties Section */}
+        {/* Clients Section */}
         <section id="specialties" className="py-20 bg-background">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
             <span className="mb-4 text-sm text-[#FFFFFF]  opacity-55 font-normal tracking-wide">
@@ -408,40 +408,102 @@ export default function Home() {
                 </div>
               </Card>
             </div>
+
+             
+    <div className="relative w-[1216px] h-[270px] bg-[#08090C] border-[rgba(255,255,255,0.08)] border-[1.5px] rounded-[24px] box-border mt-4 overflow-hidden">
+
+      {/* Vetores de fundo */}
+      <div className="absolute left-[71.3%] right-[3.82%] top-[-51.11%] bottom-[37.47%] bg-[rgba(255,255,255,0.08)] rotate-[-105deg]" />
+      <div className="absolute left-[80.26%] right-[-5.15%] top-[23.7%] bottom-[-37.35%] bg-[rgba(255,255,255,0.08)] rotate-[-105deg]" />
+
+      {/* Botão Esquerdo */}
+      <div className="absolute left-[calc(50%-82px-482px)] top-[calc(50%-82px)] w-[164px] h-[164px] rounded-full border border-[rgba(255,255,255,0.06)] bg-gradient-to-br from-[#242631] to-[#04050B] shadow-[inset_0_4px_32px_rgba(255,255,255,0.04)] flex items-center justify-center">
+        <div className="w-[82px] h-[79.8px] bg-[#1A5CFF]" />
+      </div>
+
+      {/* Botão Direita */}
+      <div className="absolute left-[calc(50%-82px+487px)] z-10 top-[calc(50%-82px)] w-[164px] h-[164px] rounded-full border border-[rgba(255,255,255,0.06)] bg-gradient-to-br from-[#242631] to-[#04050B] shadow-[inset_0_4px_32px_rgba(255,255,255,0.04)] flex items-center justify-center">
+        <Image
+                        src={simboloAzul}
+                        alt="Símbolo Azul"
+                        width={82}
+                        height={82}
+                        className="object-contain"
+                      />
+      </div>
+
+      {/* Faixa “Saiba Mais” */}
+      <div className="absolute left-[44px] top-[52px] w-[1111px] h-[164px] rounded-full bg-gradient-to-r from-[#020308] via-[#0D225D] to-[#1A5CFF] flex items-center justify-center">
+        <span className="text-[#D3E0FF] font-normal text-[56px] tracking-tight leading-[100%]">
+          Saiba mais
+        </span>
+      </div>
+
+      {/* Ícone */}
+      <div className="absolute left-[1054px] top-[177px] w-[73px] h-[73px]">
+        <div className="relative w-[39px] h-[35.21px] bg-white border-[2.28px] border-black mx-auto drop-shadow-[0_3.04px_2.43px_rgba(0,0,0,0.5)]">
+          <div className="absolute w-[2.34px] h-[12.77px] bg-black left-[calc(50%+9.77px)] top-[calc(50%+2.85px)]" />
+          <div className="absolute w-[2.34px] h-[12.77px] bg-black left-[calc(50%+3.71px)] top-[calc(50%+2.85px)]" />
+          <div className="absolute w-[2.34px] h-[12.77px] bg-black left-[calc(50%-2.37px)] top-[calc(50%+2.85px)]" />
+        </div>
+      </div>
+    </div>
           </div>
         </section>
 
         {/* FAQ Section */}
         <section id="faq" className="py-20 bg-background">
+                      <div className="flex justify-center">
+              <span className="inline-block px-2.5 py-1.5 mb-6 border border-[#161a24] bg-[#161a24] rounded-full text-sm text-[#D3E0FF] font-normal tracking-wide text-center">
+                FAQ
+              </span>
+            </div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground font-headline">
+            <h2
+              className="text-3xl md:text-6xl font-normal text-center font-headline
+             bg-gradient-to-b from-[#FFFFFF] via-[#FFFFFF] to-[#2D5ACA]/80
+             text-transparent bg-clip-text"
+            >
               Perguntas Frequentes
             </h2>
-            <Accordion
-              type="single"
-              collapsible
-              className="w-full max-w-4xl mx-auto mt-12 grid md:grid-cols-2 gap-x-8 gap-y-4 bg-background"
-            >
-              {faqItems.map((item, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="bg-card border-border/50 rounded-lg px-4"
-                >
-                  <AccordionTrigger className="text-left hover:bg-[radial-gradient(circle_at_top_center,rgba(37,99,235,0.25),transparent_50%)]">
-                    <div className="flex items-center gap-4">
-                      <div className="bg-background p-3 rounded-full border border-border">
-                        <HelpCircle className="h-6 w-6 text-primary" />
-                      </div>
-                      <span className="flex-1">{item.question}</span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pl-16 pr-4">
-                    {item.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+<Accordion
+  type="single"
+  collapsible
+  className="w-full max-w-6xl mx-auto mt-12 grid md:grid-cols-2 gap-x-8 gap-y-4"
+>
+  {faqItems.map((item, index) => (
+    <AccordionItem
+      key={index}
+      value={`item-${index}`}
+      className="rounded-xl border border-[#141417] bg-[#141417] px-6 py-4 transition-colors duration-300 hover:border-[rgba(255,255,255,0.15)]"
+    >
+      {/* Cabeçalho: texto + ícone fixo */}
+      <div className="flex items-center justify-between">
+        <AccordionTrigger className="flex-1 text-left text-sm md:text-base text-gray-200 font-medium hover:no-underline focus:outline-none">
+          {item.question}
+        </AccordionTrigger>
+
+        <div className="ml-4 flex items-center justify-center bg-[#090a0d] border border-[#090a0d] rounded-lg p-2">
+          <Image
+                        src={simboloAzul}
+                        alt="Símbolo Azul"
+                        width={24}
+                        height={24}
+                        className="object-contain"
+                      />
+        </div>
+      </div>
+
+      {/* Conteúdo expandido */}
+      <AccordionContent className="text-muted-foreground text-sm mt-3 text-gray-400 leading-relaxed pl-1 pr-2">
+        {item.answer}
+      </AccordionContent>
+    </AccordionItem>
+  ))}
+</Accordion>
+
+
+
           </div>
         </section>
 
