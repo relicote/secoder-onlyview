@@ -1,81 +1,129 @@
 import Link from "next/link";
-import { Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Card } from "./ui/card";
+import logoFooter from "../images/logo-vertical-footer.png";
+import Image from "next/image";
+import logoAzul from "../images/secoder-azul.svg";
+import SocialMediaIcons from "./socialMediaIcons";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-background ">
-      <div className="container w-full mx-auto px-4 sm:px-6 lg:px-8  text-center inset-0 bg-[radial-gradient(circle_at_bottom_center,rgba(37,99,235,0.25),transparent_60%)] ">
+    <footer
+      id="contact"
+      className="bg-[radial-gradient(circle_at_bottom_center,rgba(37,99,235,0.25),transparent_70%)] max-w-[1221px] mx-auto justify-center"
+    >
+      <div className=" relative flex flex-row gap-4">
+        <Image
+          src={logoFooter}
+          alt="Secoder Mascot"
+          className="max-w-[112px] max-h-[144px] pb-2"
+        />
 
-        <div className="pt-2 border-t border-border/50 flex flex-col sm:flex-row justify-between items-center gap-4"/>
-        <div className="col-span-1 lg:col-span-2 flex flex-col gap-4 border rounded-xl">
-            <form className="flex gap-2">
-              <div className="flex flex-col sm:flex-row items-center gap-4 bg-[#08090C] p-6 rounded-lg w-full  mx-auto">
-                <h2 className="text-[#D3DFFF] text-2xl font-semibold">Newsletter</h2>
-                <div className="flex flex-1  w-full sm:w-auto mt-4 sm:mt-0 justify-end">
-                  <input 
-                    type="email" 
-                    placeholder="Digite seu melhor e-mail" 
-                    className="flex-2 px-4 py-2 rounded-l-lg border border-gray-700 bg-input text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 "
-                  />
-                  <button 
-                    className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white font-medium rounded-r-lg hover:opacity-90 transition"
-                  >
-                    Enviar →
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-10 text-center">
-         <Link
-              href="/"
-              className="text-20xl sm:text-4xl md:text-8xl lg:text-20xl font-extrabold
-           bg-gradient-to-b from-gray-900/50 to-gray-300/50 bg-clip-text text-transparent"
+        <div className="flex flex-col justify-end pb-4 gap-2 text-sm text-muted-foreground">
+          <span>contato@secoder.com.br</span>
+        </div>
+
+        <div className="flex flex-col justify-end pb-4 gap-2 text-sm text-muted-foreground">
+          <span>+55 (63) 9 9106-5586</span>
+        </div>
+
+        <div className="flex flex-col justify-end pb-4 gap-2 text-sm text-muted-foreground">
+          <span>+55 (85) 9 9281-3401</span>
+        </div>
+        
+          
+        <div className="absolute bottom-0 left-0 w-full flex justify-end pb-4">
+          <span className="text-[#D3DFFF] text-opacity-20 pr-4"> | </span>
+          <SocialMediaIcons/>
+        </div>
+      </div>
+
+      <div className="w-full mx-auto pt-2 border-t border-border/50 flex flex-col  justify-between items-center gap-4" />
+
+      <Card
+        className="flex 
+              flex-col 
+              sm:flex-row 
+              items-center 
+              gap-4 
+              p-6 
+              max-h-[132px]
+              w-full
+              bg-card
+              rounded-[30px]
+              overflow-hidden
+              justify-between
+              transition-transform
+              duration-300
+              mx-auto"
+      >
+        <h2 className="text-[#D3DFFF] text-[48px] ">Newsletter</h2>
+        <form>
+        <Card
+          className="flex
+                items-center 
+                w-auto 
+                w-auto lg:w-[539px] 
+                h-auto lg:h-[79px]
+                mt-4 sm:mt-0 
+                rounded-[20px] 
+                bg-[#141417]
+                "
+        >
+            <input
+              type="email"
+              placeholder="Digite seu melhor e-mail"
+              className="px-4 rounded-l-lg bg-input text-white placeholder-gray-400 focus:outline-none  bg-transparent focus:caret-[#095EE6] "
+            />
+            <Button
+              size="lg"
+              className="transition-transform ml-auto duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20  rounded-full bg-gray-900"
+              type="submit"
             >
-              Secoder
+              Enviar →
+            </Button>
+        </Card>
+          </form>
+      </Card>
+      <div className="container w-full text-center inset-0  ">
+        <div className="container text-center">
+          <Link
+            href="/"
+            className="text-18xl sm:text-4xl md:text-8xl lg:text-18xl font-extrabold
+              bg-gradient-to-b from-gray-900/30 to-gray-600/50 bg-clip-text text-transparent "
+          >
+            Secoder
           </Link>
         </div>
-         <div className="pt-2 border-t border-border/50 flex flex-col sm:flex-row justify-between items-center gap-4"/>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-         
-          <div className="flex flex-col gap-4">
-           
 
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Mail className="h-4 w-4 text-primary" />
-              <span>contato@secoder.com</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Phone className="h-4 w-4 text-primary" />
-              <span>+55 (11) 98765-4321</span>
-            </div>
+        <div className="w-full mx-auto pt-2 border-t border-border/50 flex flex-col  justify-between items-center gap-4" />
+
+        <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-4 items-center  ">
+          <div className="flex items-center text-[18px] text-[#D3DFFF] text-opacity-50 ">
+            <Link href="#" className=" hover:text-primary transition-colors ">
+              Secoder Tecnologia e Segurança Digital Ltda.
+            </Link>
           </div>
-
-          <div className="flex flex-col text-sm gap-4">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground flex-row">
-              <p className="text-sm text-muted-foreground ">
-                Secoder Tecnologia e Segurança Digital Ltda.
-              </p>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                Política de Privacidade
-              </Link>
-              <span className="text-muted-foreground">|</span>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                Termos de Uso
-              </Link>
-            </div>
+          <div className="flex items-center text-[16px] text-[#D3DFFF] text-opacity-40 ">
+            <Link href="#" className="hover:text-primary transition-colors p-2">
+              Política de Privacidade
+            </Link>
+            <span className="text-[#D3DFFF] text-opacity-20"> | </span>
+            <Link
+              href="#"
+              className=" hover:text-primary p-2 transition-colors"
+            >
+              Termos de Uso
+            </Link>
+          </div>
+          <div className="flex ml-auto items-center text-[16px] text-[#D3DFFF] text-opacity-40 ">
+            <Image
+              src={logoAzul}
+              alt="Secoder Mascot"
+              className="max-w-[48px] max-h-[48px]"
+            />
           </div>
         </div>
-
-        
       </div>
     </footer>
   );
