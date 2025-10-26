@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       fontSize: {
-        '20xl': '20rem', // 160px
+        '18xl': '18rem', // 160px
       },
       fontFamily: {
         body: ['__nextjs-Geist', 'sans-serif'],
