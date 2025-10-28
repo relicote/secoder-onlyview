@@ -552,12 +552,41 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="absolute left-[71.3%] right-[3.82%] top-[44.71%] bottom-[-24%] bg-white/10"></div>
-      <div className="absolute left-[47.7%] right-[27.42%] top-[-31%] bottom-[51.71%] bg-white/10"></div>
-      <div className="absolute left-[106.52%] right-[-31.4%] top-[49.12%] bottom-[-28.41%] bg-white/10 -rotate-[105deg]"></div>
-      <div className="absolute left-[82.92%] right-[-7.8%] top-[-26.59%] bottom-[47.3%] bg-white/10 -rotate-[105deg]"></div>
-      <div className="absolute left-[90.4%] right-[-15.28%] top-[40.31%] bottom-[-19.6%] bg-white/10 rotate-180"></div>
-      <div className="absolute left-[66.8%] right-[8.32%] top-[-35.4%] bottom-[56.11%] bg-white/10 rotate-180"></div>
+      {/* Mascote */}
+         {/* Fundo com múltiplos símbolos */}
+<div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
+  <Image
+    src={simboloFundo}
+    alt="Símbolo Secoder"
+    className="absolute left-[71.3%] right-[3.82%] top-[44.71%] bottom-[-24%] w-auto h-auto opacity-10"
+    priority
+  />
+  <Image
+    src={simboloFundo}
+    alt="Símbolo Secoder"
+    className="absolute left-[47.7%] right-[27.42%] top-[-31%] bottom-[51.71%] w-auto h-auto opacity-10"
+    priority
+  />
+  <Image
+    src={simboloFundo}
+    alt="Símbolo Secoder"
+    className="absolute left-[106.52%] right-[-31.4%] top-[49.12%] bottom-[-28.41%] w-auto h-auto opacity-10 -rotate-[105deg]"
+    priority
+  />
+  <Image
+    src={simboloFundo}
+    alt="Símbolo Secoder"
+    className="absolute left-[82.92%] right-[-7.8%] top-[-26.59%] bottom-[47.3%] w-auto h-auto opacity-10 -rotate-[105deg]"
+    priority
+  />
+  <Image
+    src={simboloFundo}
+    alt="Símbolo Secoder"
+    className="absolute left-[90.4%] right-[-15.28%] top-[40.31%] bottom-[-19.6%] w-auto h-auto opacity-10 rotate-180"
+    priority
+  />
+</div>
+
     </div>
   </div>
 </section>
