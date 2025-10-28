@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="bg-[radial-gradient(circle_at_bottom_center,rgba(37,99,235,0.25),transparent_70%)] max-w-[1221px] mx-auto justify-center"
+      className="bg-[radial-gradient(circle_at_bottom_center,rgba(37,99,235,0.25),transparent_70%)] max-w-[1221px] mx-auto justify-center mt-8"
     >
       <div className=" relative flex flex-row gap-4">
         <Image

@@ -508,34 +508,60 @@ export default function Home() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground font-headline">
-              Pronto para fortalecer sua segurança?
-            </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
-              Nossa equipe de especialistas está pronta para ajudar você a
-              proteger seu negócio.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
-              <Button
-                size="lg"
-                asChild
-                className="transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+<section className="relative py-20 bg-background">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="relative box-border w-full max-w-[1216px] mx-auto h-[387px] bg-gradient-to-r from-[#3F76FD] via-[#1A5CFF] to-[#719AFF] border-[3px] border-white/5 rounded-[48px] overflow-hidden flex flex-col items-start justify-center px-10 md:px-20">
+      <div className="flex flex-col items-start gap-6 max-w-[528px]">
+        <div className="flex flex-col items-start gap-3">
+          <h2 className="text-[#F7F9FF] font-geist font-medium text-[40px] md:text-[64px] leading-[100%] tracking-[-0.07em] text-left">
+            Venha conversar com nossa equipe!
+          </h2>
+          <p className="text-[18px] leading-[150%] text-white/70 font-geist font-normal text-left">
+            Metodologia proprietária para pentest de urgência que combina técnicas avançadas de automação.
+          </p>
+        </div>
+
+        <div className="flex items-center gap-4 mt-4">
+          <Button
+            size="lg"
+            asChild
+            className="relative w-[249px] h-[48px] bg-gradient-to-b from-[rgba(16,16,16,0.04)] to-[rgba(23,23,23,0.12)] shadow-[inset_0_1px_0_rgba(255,255,255,0.09)] backdrop-blur-[16px] rounded-full overflow-hidden transition-transform duration-300 hover:scale-105"
+          >
+            <Link href="#contact" className="flex items-center justify-center gap-3 text-[#F1F1EF] font-inter text-[16px]">
+              Fale com um especialista
+              <svg
+                className="w-4 h-4 text-[#F1F1EF]"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                viewBox="0 0 24 24"
               >
-                <Link href="#contact">Fale com um especialista</Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105"
-              >
-                <Link href="#faq">Tem dúvida?</Link>
-              </Button>
-            </div>
-          </div>
-        </section>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
+              </svg>
+            </Link>
+          </Button>
+
+          <Button
+            size="lg"
+            variant="outline"
+            asChild
+            className="border border-white/30 text-white hover:bg-white/10 hover:text-white transition-all duration-300 hover:scale-105 rounded-full"
+          >
+            <Link href="#faq">Tem dúvida?</Link>
+          </Button>
+        </div>
+      </div>
+
+      <div className="absolute left-[71.3%] right-[3.82%] top-[44.71%] bottom-[-24%] bg-white/10"></div>
+      <div className="absolute left-[47.7%] right-[27.42%] top-[-31%] bottom-[51.71%] bg-white/10"></div>
+      <div className="absolute left-[106.52%] right-[-31.4%] top-[49.12%] bottom-[-28.41%] bg-white/10 -rotate-[105deg]"></div>
+      <div className="absolute left-[82.92%] right-[-7.8%] top-[-26.59%] bottom-[47.3%] bg-white/10 -rotate-[105deg]"></div>
+      <div className="absolute left-[90.4%] right-[-15.28%] top-[40.31%] bottom-[-19.6%] bg-white/10 rotate-180"></div>
+      <div className="absolute left-[66.8%] right-[8.32%] top-[-35.4%] bottom-[56.11%] bg-white/10 rotate-180"></div>
+    </div>
+  </div>
+</section>
+
       </main>
       <Footer />
     </div>
