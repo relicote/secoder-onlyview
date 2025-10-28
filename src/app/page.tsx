@@ -27,6 +27,7 @@ import { Badge } from "@/components/ui/badge";
 import imageHeader from "../images/logo-header.png";
 import simboloFundo from "../images/simbolo-fundo.svg";
 import simboloAzul from "../images/secoder-azul.svg";
+import secoderSentado from "../images/secoder-sentado.svg";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
@@ -409,55 +410,53 @@ export default function Home() {
               </Card>
             </div>
 
-             
-    <div className="relative w-[1216px] h-[270px] bg-[#08090C] border-[rgba(255,255,255,0.08)] border-[1.5px] rounded-[24px] box-border mt-4 overflow-hidden">
+            <div className="relative w-[1216px] h-[270px] bg-[#08090C] border-[rgba(255,255,255,0.08)] border-[1.5px] rounded-[24px] box-border mt-4 overflow-hidden">
+              {/* Vetores de fundo */}
+              <div className="absolute left-[71.3%] right-[3.82%] top-[-51.11%] bottom-[37.47%] bg-[rgba(255,255,255,0.08)] rotate-[-105deg]" />
+              <div className="absolute left-[80.26%] right-[-5.15%] top-[23.7%] bottom-[-37.35%] bg-[rgba(255,255,255,0.08)] rotate-[-105deg]" />
 
-      {/* Vetores de fundo */}
-      <div className="absolute left-[71.3%] right-[3.82%] top-[-51.11%] bottom-[37.47%] bg-[rgba(255,255,255,0.08)] rotate-[-105deg]" />
-      <div className="absolute left-[80.26%] right-[-5.15%] top-[23.7%] bottom-[-37.35%] bg-[rgba(255,255,255,0.08)] rotate-[-105deg]" />
+              {/* Botão Esquerdo */}
+              <div className="absolute left-[calc(50%-82px-482px)] top-[calc(50%-82px)] w-[164px] h-[164px] rounded-full border border-[rgba(255,255,255,0.06)] bg-gradient-to-br from-[#242631] to-[#04050B] shadow-[inset_0_4px_32px_rgba(255,255,255,0.04)] flex items-center justify-center">
+                <div className="w-[82px] h-[79.8px] bg-[#1A5CFF]" />
+              </div>
 
-      {/* Botão Esquerdo */}
-      <div className="absolute left-[calc(50%-82px-482px)] top-[calc(50%-82px)] w-[164px] h-[164px] rounded-full border border-[rgba(255,255,255,0.06)] bg-gradient-to-br from-[#242631] to-[#04050B] shadow-[inset_0_4px_32px_rgba(255,255,255,0.04)] flex items-center justify-center">
-        <div className="w-[82px] h-[79.8px] bg-[#1A5CFF]" />
-      </div>
+              {/* Botão Direita */}
+              <div className="absolute left-[calc(50%-82px+487px)] z-10 top-[calc(50%-82px)] w-[164px] h-[164px] rounded-full border border-[rgba(255,255,255,0.06)] bg-gradient-to-br from-[#242631] to-[#04050B] shadow-[inset_0_4px_32px_rgba(255,255,255,0.04)] flex items-center justify-center">
+                <Image
+                  src={simboloAzul}
+                  alt="Símbolo Azul"
+                  width={82}
+                  height={82}
+                  className="object-contain"
+                />
+              </div>
 
-      {/* Botão Direita */}
-      <div className="absolute left-[calc(50%-82px+487px)] z-10 top-[calc(50%-82px)] w-[164px] h-[164px] rounded-full border border-[rgba(255,255,255,0.06)] bg-gradient-to-br from-[#242631] to-[#04050B] shadow-[inset_0_4px_32px_rgba(255,255,255,0.04)] flex items-center justify-center">
-        <Image
-                        src={simboloAzul}
-                        alt="Símbolo Azul"
-                        width={82}
-                        height={82}
-                        className="object-contain"
-                      />
-      </div>
+              {/* Faixa “Saiba Mais” */}
+              <div className="absolute left-[44px] top-[52px] w-[1111px] h-[164px] rounded-full bg-gradient-to-r from-[#020308] via-[#0D225D] to-[#1A5CFF] flex items-center justify-center">
+                <span className="text-[#D3E0FF] font-normal text-[56px] tracking-tight leading-[100%]">
+                  Saiba mais
+                </span>
+              </div>
 
-      {/* Faixa “Saiba Mais” */}
-      <div className="absolute left-[44px] top-[52px] w-[1111px] h-[164px] rounded-full bg-gradient-to-r from-[#020308] via-[#0D225D] to-[#1A5CFF] flex items-center justify-center">
-        <span className="text-[#D3E0FF] font-normal text-[56px] tracking-tight leading-[100%]">
-          Saiba mais
-        </span>
-      </div>
-
-      {/* Ícone */}
-      <div className="absolute left-[1054px] top-[177px] w-[73px] h-[73px]">
-        <div className="relative w-[39px] h-[35.21px] bg-white border-[2.28px] border-black mx-auto drop-shadow-[0_3.04px_2.43px_rgba(0,0,0,0.5)]">
-          <div className="absolute w-[2.34px] h-[12.77px] bg-black left-[calc(50%+9.77px)] top-[calc(50%+2.85px)]" />
-          <div className="absolute w-[2.34px] h-[12.77px] bg-black left-[calc(50%+3.71px)] top-[calc(50%+2.85px)]" />
-          <div className="absolute w-[2.34px] h-[12.77px] bg-black left-[calc(50%-2.37px)] top-[calc(50%+2.85px)]" />
-        </div>
-      </div>
-    </div>
+              {/* Ícone */}
+              <div className="absolute left-[1054px] top-[177px] w-[73px] h-[73px]">
+                <div className="relative w-[39px] h-[35.21px] bg-white border-[2.28px] border-black mx-auto drop-shadow-[0_3.04px_2.43px_rgba(0,0,0,0.5)]">
+                  <div className="absolute w-[2.34px] h-[12.77px] bg-black left-[calc(50%+9.77px)] top-[calc(50%+2.85px)]" />
+                  <div className="absolute w-[2.34px] h-[12.77px] bg-black left-[calc(50%+3.71px)] top-[calc(50%+2.85px)]" />
+                  <div className="absolute w-[2.34px] h-[12.77px] bg-black left-[calc(50%-2.37px)] top-[calc(50%+2.85px)]" />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* FAQ Section */}
         <section id="faq" className="py-20 bg-background">
-                      <div className="flex justify-center">
-              <span className="inline-block px-2.5 py-1.5 mb-6 border border-[#161a24] bg-[#161a24] rounded-full text-sm text-[#D3E0FF] font-normal tracking-wide text-center">
-                FAQ
-              </span>
-            </div>
+          <div className="flex justify-center">
+            <span className="inline-block px-2.5 py-1.5 mb-6 border border-[#161a24] bg-[#161a24] rounded-full text-sm text-[#D3E0FF] font-normal tracking-wide text-center">
+              FAQ
+            </span>
+          </div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2
               className="text-3xl md:text-6xl font-normal text-center font-headline
@@ -466,131 +465,142 @@ export default function Home() {
             >
               Perguntas Frequentes
             </h2>
-<Accordion
-  type="single"
-  collapsible
-  className="w-full max-w-6xl mx-auto mt-12 grid md:grid-cols-2 gap-x-8 gap-y-4"
->
-  {faqItems.map((item, index) => (
-    <AccordionItem
-      key={index}
-      value={`item-${index}`}
-      className="rounded-xl border border-[#141417] bg-[#141417] px-6 py-4 transition-colors duration-300 hover:border-[rgba(255,255,255,0.15)]"
-    >
-      {/* Cabeçalho: texto + ícone fixo */}
-      <div className="flex items-center justify-between">
-        <AccordionTrigger className="flex-1 text-left text-sm md:text-base text-gray-200 font-medium hover:no-underline focus:outline-none">
-          {item.question}
-        </AccordionTrigger>
+            <Accordion
+              type="single"
+              collapsible
+              className="w-full max-w-6xl mx-auto mt-12 grid md:grid-cols-2 gap-x-8 gap-y-4"
+            >
+              {faqItems.map((item, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="rounded-xl border border-[#141417] bg-[#141417] px-6 py-4 transition-colors duration-300 hover:border-[rgba(255,255,255,0.15)]"
+                >
+                  {/* Cabeçalho: texto + ícone fixo */}
+                  <div className="flex items-center justify-between">
+                    <AccordionTrigger className="flex-1 text-left text-sm md:text-base text-gray-200 font-medium hover:no-underline focus:outline-none">
+                      {item.question}
+                    </AccordionTrigger>
 
-        <div className="ml-4 flex items-center justify-center bg-[#090a0d] border border-[#090a0d] rounded-lg p-2">
-          <Image
+                    <div className="ml-4 flex items-center justify-center bg-[#090a0d] border border-[#090a0d] rounded-lg p-2">
+                      <Image
                         src={simboloAzul}
                         alt="Símbolo Azul"
                         width={24}
                         height={24}
                         className="object-contain"
                       />
-        </div>
-      </div>
+                    </div>
+                  </div>
 
-      {/* Conteúdo expandido */}
-      <AccordionContent className="text-muted-foreground text-sm mt-3 text-gray-400 leading-relaxed pl-1 pr-2">
-        {item.answer}
-      </AccordionContent>
-    </AccordionItem>
-  ))}
-</Accordion>
-
-
-
+                  {/* Conteúdo expandido */}
+                  <AccordionContent className="text-muted-foreground text-sm mt-3 text-gray-400 leading-relaxed pl-1 pr-2">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </section>
 
         {/* Final CTA */}
-<section className="relative py-20 bg-background">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <div className="relative box-border w-full max-w-[1216px] mx-auto h-[387px] bg-gradient-to-r from-[#3F76FD] via-[#1A5CFF] to-[#719AFF] border-[3px] border-white/5 rounded-[48px] overflow-hidden flex flex-col items-start justify-center px-10 md:px-20">
-      <div className="flex flex-col items-start gap-6 max-w-[528px]">
-        <div className="flex flex-col items-start gap-3">
-          <h2 className="text-[#F7F9FF] font-geist font-medium text-[40px] md:text-[64px] leading-[100%] tracking-[-0.07em] text-left">
-            Venha conversar com nossa equipe!
-          </h2>
-          <p className="text-[18px] leading-[150%] text-white/70 font-geist font-normal text-left">
-            Metodologia proprietária para pentest de urgência que combina técnicas avançadas de automação.
-          </p>
-        </div>
+        <section className="relative py-20 bg-background">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="relative box-border w-full max-w-[1216px] mx-auto h-[387px] bg-gradient-to-r from-[#3F76FD] via-[#1A5CFF] to-[#719AFF] border-[3px] border-white/5 rounded-[48px] overflow-hidden flex flex-col items-start justify-center px-10 md:px-20">
+              <div className="flex flex-col items-start gap-6 max-w-[528px]">
+                <div className="flex flex-col items-start gap-3">
+                  <h2 className="text-[#F7F9FF] font-geist font-medium text-[40px] md:text-[64px] leading-[100%] tracking-[-0.07em] text-left">
+                    Venha conversar com nossa equipe!
+                  </h2>
+                  <p className="text-[18px] leading-[150%] text-white/70 font-geist font-normal text-left">
+                    Metodologia proprietária para pentest de urgência que
+                    combina técnicas avançadas de automação.
+                  </p>
+                </div>
 
-        <div className="flex items-center gap-4 mt-4">
-          <Button
-            size="lg"
-            asChild
-            className="relative w-[249px] h-[48px] bg-gradient-to-b from-[rgba(16,16,16,0.04)] to-[rgba(23,23,23,0.12)] shadow-[inset_0_1px_0_rgba(255,255,255,0.09)] backdrop-blur-[16px] rounded-full overflow-hidden transition-transform duration-300 hover:scale-105"
-          >
-            <Link href="#contact" className="flex items-center justify-center gap-3 text-[#F1F1EF] font-inter text-[16px]">
-              Fale com um especialista
-              <svg
-                className="w-4 h-4 text-[#F1F1EF]"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
-              </svg>
-            </Link>
-          </Button>
+                <div className="flex items-center gap-4 mt-4">
+                  <Button
+                    size="lg"
+                    asChild
+                    className="relative w-[249px] h-[48px] bg-gradient-to-b from-[rgba(16,16,16,0.04)] to-[rgba(23,23,23,0.12)] shadow-[inset_0_1px_0_rgba(255,255,255,0.09)] backdrop-blur-[16px] rounded-full overflow-hidden transition-transform duration-300 hover:scale-105"
+                  >
+                    <Link
+                      href="#contact"
+                      className="flex items-center justify-center gap-3 text-[#F1F1EF] font-inter text-[16px]"
+                    >
+                      Fale com um especialista
+                      <svg
+                        className="w-4 h-4 text-[#F1F1EF]"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 12h14m-6-6l6 6-6 6"
+                        />
+                      </svg>
+                    </Link>
+                  </Button>
 
-          <Button
-            size="lg"
-            variant="outline"
-            asChild
-            className="border border-white/30 text-white hover:bg-white/10 hover:text-white transition-all duration-300 hover:scale-105 rounded-full"
-          >
-            <Link href="#faq">Tem dúvida?</Link>
-          </Button>
-        </div>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    asChild
+                    className="border border-white/30 text-white hover:bg-white/10 hover:text-white transition-all duration-300 hover:scale-105 rounded-full"
+                  >
+                    <Link href="#faq">Tem dúvida?</Link>
+                  </Button>
+                </div>
+              </div>
+
+              {/* Mascote */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
+                <Image
+                  src={simboloFundo}
+                  alt="Símbolo Secoder"
+                  className="absolute left-[71.3%] right-[3.82%] top-[44.71%] bottom-[-24%] w-auto h-auto opacity-10"
+                  priority
+                />
+                <Image
+                  src={simboloFundo}
+                  alt="Símbolo Secoder"
+                  className="absolute left-[47.7%] right-[27.42%] top-[-31%] bottom-[51.71%] w-auto h-auto opacity-10"
+                  priority
+                />
+                <Image
+                  src={simboloFundo}
+                  alt="Símbolo Secoder"
+                  className="absolute left-[106.52%] right-[-31.4%] top-[49.12%] bottom-[-28.41%] w-auto h-auto opacity-10 -rotate-[105deg]"
+                  priority
+                />
+                <Image
+                  src={simboloFundo}
+                  alt="Símbolo Secoder"
+                  className="absolute left-[82.92%] right-[-7.8%] top-[-26.59%] bottom-[47.3%] w-auto h-auto opacity-10 -rotate-[105deg]"
+                  priority
+                />
+                <Image
+                  src={simboloFundo}
+                  alt="Símbolo Secoder"
+                  className="absolute left-[90.4%] right-[-15.28%] top-[40.31%] bottom-[-19.6%] w-auto h-auto opacity-10 rotate-180"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+          {/* Ilustração sobreposta */}
+      <div className="absolute bottom-0 right-0 md:right-[60px] z-[50] pointer-events-none select-none">
+        <Image
+          src={secoderSentado}
+          alt="Mascote Secoder"
+          className="w-[340px] md:w-[470px] lg:w-[880px] h-auto object-contain translate-y-[510px] translate-x-[-135px]"
+          priority
+        />
       </div>
-
-      {/* Mascote */}
-         {/* Fundo com múltiplos símbolos */}
-<div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
-  <Image
-    src={simboloFundo}
-    alt="Símbolo Secoder"
-    className="absolute left-[71.3%] right-[3.82%] top-[44.71%] bottom-[-24%] w-auto h-auto opacity-10"
-    priority
-  />
-  <Image
-    src={simboloFundo}
-    alt="Símbolo Secoder"
-    className="absolute left-[47.7%] right-[27.42%] top-[-31%] bottom-[51.71%] w-auto h-auto opacity-10"
-    priority
-  />
-  <Image
-    src={simboloFundo}
-    alt="Símbolo Secoder"
-    className="absolute left-[106.52%] right-[-31.4%] top-[49.12%] bottom-[-28.41%] w-auto h-auto opacity-10 -rotate-[105deg]"
-    priority
-  />
-  <Image
-    src={simboloFundo}
-    alt="Símbolo Secoder"
-    className="absolute left-[82.92%] right-[-7.8%] top-[-26.59%] bottom-[47.3%] w-auto h-auto opacity-10 -rotate-[105deg]"
-    priority
-  />
-  <Image
-    src={simboloFundo}
-    alt="Símbolo Secoder"
-    className="absolute left-[90.4%] right-[-15.28%] top-[40.31%] bottom-[-19.6%] w-auto h-auto opacity-10 rotate-180"
-    priority
-  />
-</div>
-
-    </div>
-  </div>
-</section>
-
+        </section>
       </main>
       <Footer />
     </div>
