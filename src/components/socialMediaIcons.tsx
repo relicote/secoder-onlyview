@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
-import tikTokIcon from "../images/tiktok.png";
+import Link from "next/link"
+import Image from "next/image"
+import tikTokIcon from "../images/tiktok.png"
 
 export default function SocialMediaIcons() {
   return (
@@ -43,5 +43,5 @@ export default function SocialMediaIcons() {
         <div className="h-5 w-5 text-foreground/80 transition-colors bg-[#D3DFFF] [mask:url(../images/twitter-x.svg)_no-repeat_center] [mask-size:contain] hover:bg-[#095EE6]" />
       </Link>
     </div>
-  );
+  )
 }
