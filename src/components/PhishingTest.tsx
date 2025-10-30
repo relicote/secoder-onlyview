@@ -93,7 +93,7 @@ export default function PhishingTest() {
             className="hidden md:block absolute left-[80.26%] right-[-5.15%] top-[39.5%] bottom-[-37.35%] rotate-[-115deg] opacity-5"
           />
           <div className="relative flex items-center justify-center gap-4 md:gap-8 lg:gap-12 py-12 md:py-16 px-4">
-            <div className="relative flex-1 max-w-full md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1200px] h-[120px] md:h-[140px] lg:h-[164px] rounded-full bg-gradient-to-r from-[#020308] via-[#0D225D] to-[#1A5CFF] flex items-center justify-center px-6">
+            <div className="relative flex-1 max-w-full md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1150px] h-[120px] md:h-[140px] lg:h-[164px] rounded-full bg-gradient-to-r from-[#020308] via-[#0D225D] to-[#1A5CFF] flex items-center justify-center px-6">
               {/* Texto centralizado */}
               <span className="text-[#D3E0FF] font-normal text-3xl sm:text-4xl md:text-5xl lg:text-[56px] tracking-tight leading-[100%] text-center">
                 Saiba mais
