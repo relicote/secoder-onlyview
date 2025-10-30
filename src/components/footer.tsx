@@ -1,12 +1,13 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card } from "./ui/card"
-import logoFooter from "../images/logo-vertical-footer.png"
-import Image from "next/image"
-import logoAzul from "../images/secoder-azul.svg"
-import SocialMediaIcons from "./socialMediaIcons"
+import Link from "next/link";
+import { Card } from "./ui/card";
+import logoFooter from "../images/logo-vertical-footer.png";
+import Image from "next/image";
+import logoAzul from "../images/secoder-azul.svg";
+import SocialMediaIcons from "./socialMediaIcons";
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
@@ -36,14 +37,16 @@ export default function Footer() {
         </div>
 
         <div className="flex justify-center sm:justify-end pb-4 sm:absolute sm:bottom-0 sm:right-0">
-          <span className="text-[#D3DFFF] text-opacity-20 pr-4 hidden sm:inline"> | </span>
+          <span className="text-[#D3DFFF] text-opacity-20 pr-4 hidden sm:inline">
+            {" "}
+            |{" "}
+          </span>
           <SocialMediaIcons />
         </div>
       </div>
 
       <div className="w-full mx-auto pt-2 border-t border-border/50 flex flex-col justify-between items-center gap-4" />
-
-       <Card
+      <Card
         className="flex 
               flex-col md:flex-row
               items-center 
@@ -80,31 +83,36 @@ export default function Footer() {
               placeholder="Digite seu melhor e-mail"
               className="px-4 py-3 sm:py-2 rounded-lg sm:rounded-none bg-transparent text-white placeholder-[#747B8C] focus:outline-none focus:caret-[#095EE6] flex-1 text-base md:text-lg"
             />
-            <Button
-              size="lg"
-              className="relative transition-transform duration-300 hover:scale-105 rounded-full bg-gradient-to-b from-white/[0.12] to-white/[0.04] shadow-[inset_0px_1px_0px_rgba(255,255,255,0.09)] w-full sm:w-auto px-8 h-12 overflow-hidden group"
+
+            <button
+              className="relative transition-all duration-300 rounded-full shadow-[inset_0px_1px_0px_rgba(255,255,255,0.09)] px-8 h-12 overflow-visible group bg-[#202124] flex items-center gap-2 text-white font-medium"
               type="submit"
             >
-              <span className="relative z-10 flex items-center gap-4 text-[#F1F1EF]">
-                Enviar
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  className="transition-transform group-hover:translate-x-1"
-                >
-                  <path
-                    d="M2 8H14M14 8L8 2M14 8L8 14"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+              <span className="absolute inset-[-1px] rounded-full overflow-hidden pointer-events-none  ">
+                <motion.span
+                  className="absolute inset-0 rounded-full  border border-transparent [background:linear-gradient(#202124,#202124)_padding-box,conic-gradient(from_var(--angle),transparent_0%,transparent_85%,rgba(59,130,246,0.8)_90%,rgba(96,165,250,1)_95%,rgba(59,130,246,0.8)_100%,transparent_105%)_border-box] "
+                  style={
+                    {
+                      "--angle": "0deg",
+                    } as React.CSSProperties
+                  }
+                  animate={
+                    {
+                      "--angle": "360deg",
+                    } as any
+                  }
+                  transition={{
+                    duration: 3,
+                    repeat: Number.POSITIVE_INFINITY,
+                    ease: "linear",
+                  }}
+                />
               </span>
-              <div className="absolute inset-0 bg-gradient-to-b from-[#16181B] to-[#03060E] opacity-0 group-hover:opacity-100 transition-opacity" />
-            </Button>
+
+              {/* Button content */}
+              <span className="relative z-10 ">Enviar</span>
+              <ArrowRight className="relative z-10 w-5 h-5" />
+            </button>
           </div>
         </form>
       </Card>
@@ -132,7 +140,10 @@ export default function Footer() {
             <Link href="#" className="hover:text-primary transition-colors p-2">
               Política de Privacidade
             </Link>
-            <span className="text-[#D3DFFF] text-opacity-20 hidden sm:inline"> | </span>
+            <span className="text-[#D3DFFF] text-opacity-20 hidden sm:inline">
+              {" "}
+              |{" "}
+            </span>
             <Link href="#" className="hover:text-primary p-2 transition-colors">
               Termos de Uso
             </Link>
@@ -147,5 +158,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
