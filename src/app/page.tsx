@@ -3,7 +3,6 @@ import Specialties from "@/components/Specialties";
 import Tools from "@/components/Tools";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
-import PhishingTest from "@/components/PhishingTest";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -15,7 +14,6 @@ export default function Home() {
         <Hero />
         <Specialties />
         <Tools />
-        {/* <PhishingTest /> */}
         <FAQ />
         <FinalCTA />
         <Footer />

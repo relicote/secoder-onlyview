@@ -6,7 +6,7 @@ import { MoveRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import simboloFundo from "../images/simbolo-fundo.svg"
-import imageHeader from "../images/logo-header.png"
+import secoderHeader from "@/images/secoder-header.png";
 
 export default function Hero() {
   return (
@@ -94,9 +94,9 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative flex justify-center md:justify-start md:translate-x-0 lg:translate-x-[80px] mt-8 md:mt-0">
+          <div className="relative hidden md:flex justify-center md:justify-start md:translate-x-0 lg:translate-x-[80px] mt-8 md:mt-0">
             <Image
-              src={imageHeader || "/placeholder.svg"}
+              src={secoderHeader || "/placeholder.svg"}
               alt="Secoder Mascot"
               className="w-[280px] sm:w-[350px] md:w-[400px] lg:w-[500px] h-auto object-contain"
               priority
