@@ -43,48 +43,69 @@ export default function Footer() {
 
       <div className="w-full mx-auto pt-2 border-t border-border/50 flex flex-col justify-between items-center gap-4" />
 
-      <Card
+       <Card
         className="flex 
-              flex-col 
+              flex-col md:flex-row
               items-center 
-              gap-4 
+              gap-4 md:gap-6
               p-4 sm:p-6 
-              min-h-[180px] sm:min-h-[132px]
+              min-h-[180px] md:min-h-[132px]
               w-full
-              bg-card
-              rounded-[20px] sm:rounded-[30px]
+              bg-[#08090C]
+              border border-white/8
+              rounded-[20px] md:rounded-[32px]
               overflow-hidden
               justify-between
               transition-transform
               duration-300
               mx-auto"
       >
-        <h2 className="text-[#D3DFFF] text-[32px] sm:text-[40px] md:text-[48px]">Newsletter</h2>
-        <form className="w-full">
-          <Card
+        <h2 className="text-[#D3E0FF] text-[32px] sm:text-[40px] md:text-[48px] font-normal leading-[100%] tracking-tight">
+          Newsletter
+        </h2>
+        <form className="w-full md:flex-1 md:max-w-[539px]">
+          <div
             className="flex
                 flex-col sm:flex-row
                 items-stretch sm:items-center 
                 w-full
                 gap-3 sm:gap-0
-                p-3 sm:p-0
-                mt-4 sm:mt-0 
-                rounded-[20px] 
-                bg-[#141417]"
+                p-3 sm:p-4
+                rounded-[20px] md:rounded-[24px]
+                bg-white/[0.03]
+                border border-white/8"
           >
             <input
               type="email"
               placeholder="Digite seu melhor e-mail"
-              className="px-4 py-3 sm:py-0 rounded-lg sm:rounded-l-lg bg-input text-white placeholder-gray-400 focus:outline-none bg-transparent focus:caret-[#095EE6] flex-1 text-sm sm:text-base"
+              className="px-4 py-3 sm:py-2 rounded-lg sm:rounded-none bg-transparent text-white placeholder-[#747B8C] focus:outline-none focus:caret-[#095EE6] flex-1 text-base md:text-lg"
             />
             <Button
               size="lg"
-              className="transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 rounded-full bg-gray-900 w-full sm:w-auto"
+              className="relative transition-transform duration-300 hover:scale-105 rounded-full bg-gradient-to-b from-white/[0.12] to-white/[0.04] shadow-[inset_0px_1px_0px_rgba(255,255,255,0.09)] w-full sm:w-auto px-8 h-12 overflow-hidden group"
               type="submit"
             >
-              Enviar →
+              <span className="relative z-10 flex items-center gap-4 text-[#F1F1EF]">
+                Enviar
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  className="transition-transform group-hover:translate-x-1"
+                >
+                  <path
+                    d="M2 8H14M14 8L8 2M14 8L8 14"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-b from-[#16181B] to-[#03060E] opacity-0 group-hover:opacity-100 transition-opacity" />
             </Button>
-          </Card>
+          </div>
         </form>
       </Card>
 
