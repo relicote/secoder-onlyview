@@ -3,8 +3,8 @@ import Specialties from "@/components/Specialties";
 import Tools from "@/components/Tools";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 import PhishingTest from "@/components/PhishingTest";
 
 export default function Home() {
