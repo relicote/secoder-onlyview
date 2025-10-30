@@ -49,10 +49,15 @@ export default function PhishingTest() {
 
                   <h3 className="text-4xl sm:text-5xl md:text-[56px] leading-[100%] font-normal font-headline text-[#D3E0FF] tracking-[-0.06em]">
                     Teste
-                    <br className="hidden sm:block" />{" "}
-                    {/* só aparece a partir de sm */}
-                    de phishing
+                    <br className="hidden sm:block" /> de phishing
                   </h3>
+                  <Image
+                    src={dragClick || "/placeholder.svg"}
+                    alt="Ícone de clique"
+                    width={82}
+                    height={82}
+                    className="hidden md:block absolute left-[64px] bottom-[-16px] lg:left-[176px] lg:bottom-[40px] w-[64px] h-[64px] lg:w-[82px] lg:h-[82px] z-[40] object-contain"
+                  />
                 </div>
               </div>
 
@@ -71,31 +76,30 @@ export default function PhishingTest() {
 
         <div className="relative w-full max-w-[1216px] mx-auto bg-[#08090C] border-[rgba(255,255,255,0.08)] border-[1.5px] rounded-2xl md:rounded-[24px] overflow-hidden">
           {/* Vetor 1 */}
-<Image
-  src={simboloFundo}// substitua pelo seu arquivo real
-  alt="Decorativo"
-  width={300}
-  height={300}
-  className="hidden md:block absolute left-[75.3%] right-[3.82%] top-[-30.11%] bottom-[39.47%] rotate-[-100deg] opacity-5"
-/>
+          <Image
+            src={simboloFundo}
+            alt="Decorativo"
+            width={300}
+            height={300}
+            className="hidden md:block absolute left-[75.3%] right-[3.82%] top-[-30.11%] bottom-[39.47%] rotate-[-100deg] opacity-5"
+          />
 
-{/* Vetor 2 */}
-<Image
-  src={simboloFundo} // substitua pelo seu arquivo real
-  alt="Decorativo"
-  width={300}
-  height={300}
-  className="hidden md:block absolute left-[80.26%] right-[-5.15%] top-[39.5%] bottom-[-37.35%] rotate-[-115deg] opacity-5"
-/>
+          {/* Vetor 2 */}
+          <Image
+            src={simboloFundo}
+            alt="Decorativo"
+            width={300}
+            height={300}
+            className="hidden md:block absolute left-[80.26%] right-[-5.15%] top-[39.5%] bottom-[-37.35%] rotate-[-115deg] opacity-5"
+          />
           <div className="relative flex items-center justify-center gap-4 md:gap-8 lg:gap-12 py-12 md:py-16 px-4">
-            {/* Saiba Mais Button */}
             <div className="relative flex-1 max-w-full md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1200px] h-[120px] md:h-[140px] lg:h-[164px] rounded-full bg-gradient-to-r from-[#020308] via-[#0D225D] to-[#1A5CFF] flex items-center justify-center px-6">
               {/* Texto centralizado */}
               <span className="text-[#D3E0FF] font-normal text-3xl sm:text-4xl md:text-5xl lg:text-[56px] tracking-tight leading-[100%] text-center">
                 Saiba mais
               </span>
-              {/* Ícone fixo à direita */}
-              <div className="hidden md:flex items-center justify-center absolute right-4 lg:right-[-2] w-[120px] h-[120px] lg:w-[164px] lg:h-[164px] rounded-full border border-[rgba(255,255,255,0.06)] bg-gradient-to-br from-[#242631] to-[#04050B] shadow-[inset_0_4px_32px_rgba(255,255,255,0.04)]">
+
+              <div className="hidden md:flex items-center justify-center absolute right-4 lg:right-[-2px] w-[120px] h-[120px] lg:w-[164px] lg:h-[164px] rounded-full border border-[rgba(255,255,255,0.06)] bg-gradient-to-br from-[#242631] to-[#04050B] shadow-[inset_0_4px_32px_rgba(255,255,255,0.04)]">
                 <Image
                   src={simboloAzul || "/placeholder.svg"}
                   alt="Símbolo Azul"
@@ -104,15 +108,14 @@ export default function PhishingTest() {
                   className="w-[60px] h-[60px] lg:w-[82px] lg:h-[82px] object-contain"
                 />
               </div>
-              <div>
-                <Image
-                  src={dragClick || "/placeholder.svg"}
-                  alt="Símbolo Azul"
-                  width={82}
-                  height={82}
-                  className="w-[60px] h-[60px] lg:w-[82px] lg:h-[82px] object-contain"
-                />
-              </div>
+
+              <Image
+                src={dragClick || "/placeholder.svg"}
+                alt="Ícone de clique"
+                width={82}
+                height={82}
+                className="hidden md:block absolute right-0 bottom-[-10px] lg:bottom-[-42px] lg:right-[40px] w-[64px] h-[64px] lg:w-[82px] lg:h-[82px] z-[40] object-contain"
+              />
             </div>
           </div>
         </div>
