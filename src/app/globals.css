@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 
-
 body {
   font-family: var(--font-geist);
 }
@@ -91,5 +90,26 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  @keyframes border-spin {
+    from {
+      --angle: 0deg;
+    }
+    to {
+      --angle: 360deg;
+    }
+  }
+
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  .animate-border-spin {
+    animation: border-spin 3s linear infinite;
   }
 }

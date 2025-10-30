@@ -33,31 +33,31 @@
     {
       "id": "specialty-1",
       "description": "Placeholder logo for a certification.",
-      "imageUrl": "https://picsum.photos/seed/logo1/300/150?grayscale",
-      "imageHint": "company logo"
+      "imageUrl": "/images/certificacoes5.svg",
+      "imageHint": "Certification"
     },
     {
       "id": "specialty-2",
       "description": "Placeholder logo for a certification.",
-      "imageUrl": "https://picsum.photos/seed/logo2/300/150?grayscale",
+      "imageUrl": "/images/certificacoes4.png",
       "imageHint": "company logo"
     },
     {
       "id": "specialty-3",
       "description": "Placeholder logo for a certification.",
-      "imageUrl": "https://picsum.photos/seed/logo3/300/150?grayscale",
+      "imageUrl": "/images/certificacoes3.webp",
       "imageHint": "company logo"
     },
     {
       "id": "specialty-4",
       "description": "Placeholder logo for a certification.",
-      "imageUrl": "https://picsum.photos/seed/logo4/300/150?grayscale",
+      "imageUrl": "/images/certificacoes2.svg",
       "imageHint": "company logo"
     },
     {
       "id": "specialty-5",
       "description": "Placeholder logo for a certification.",
-      "imageUrl": "https://picsum.photos/seed/logo5/300/150?grayscale",
+      "imageUrl": "/images/certificacoes1.jpeg",
       "imageHint": "company logo"
     }
   ]
