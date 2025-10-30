@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import simboloFundo from "../images/simbolo-fundo.svg"
 import secoderHeader from "@/images/secoder-header.png";
+import secoderSentado from "@/images/secoder-sentado.png";
 
 export default function Hero() {
   return (
@@ -64,12 +65,21 @@ export default function Hero() {
               </span>
             </Badge>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl mt-2 font-headline font-medium tracking-tight animate-fade-in-down text-foreground">
+ <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl mt-2 font-headline font-medium tracking-tight animate-fade-in-down text-foreground">
               Em tempo real,
               <br />
               rápida detecção,
-              <span className="block bg-gradient-to-b from-[#a7b9e8] from-5% to-[#7c98de] to-100% bg-clip-text text-transparent">
+              <span className="relative inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-b from-[#a7b9e8] from-5% to-[#7c98de] to-100% bg-clip-text text-transparent">
                 elimine riscos
+                {/* <span className="inline-flex items-center justify-center w-[60px] h-[34px] sm:w-[80px] sm:h-[45px] md:w-[90px] md:h-[51px] lg:w-[116px] lg:h-[65.51px] rounded-full bg-gradient-to-br from-[#0A0B0F] to-[#1A5CFF]/10 border border-[rgba(255,255,255,0.08)] shadow-[inset_0_2px_16px_rgba(255,255,255,0.04)]">
+                  <Image
+                    src={secoderSentado || "/placeholder.svg"}
+                    alt="Ícone Secoder"
+                    width={200}
+                    height={200}
+                    className="w-[40px] h-[40px] sm:w-[55px] sm:h-[55px] md:w-[65px] md:h-[65px] lg:w-[120px] lg:h-[120px] object-contain"
+                  />
+                </span> */}
               </span>
             </h1>
 
@@ -106,7 +116,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 z-[30] bg-gradient-to-t from-background via-background/80 to-transparent" />
+      <div className="hidden sm:block pointer-events-none absolute inset-x-0 bottom-0 h-48 z-[30] bg-gradient-to-t from-background via-background/80 to-transparent" />
     </section>
   )
 }
