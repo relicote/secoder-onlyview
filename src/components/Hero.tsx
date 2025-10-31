@@ -13,6 +13,7 @@ import simboloFundo from "@/images/simbolo-fundo.svg"
 
 export default function Hero() {
   const [gradientPosition, setGradientPosition] = useState({ x: 50, y: 50 })
+  const [isMouseInside, setIsMouseInside] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -25,7 +26,12 @@ export default function Hero() {
     setGradientPosition({ x, y })
   }
 
+  const handleMouseEnter = () => {
+    setIsMouseInside(true)
+  }
+
   const handleMouseLeave = () => {
+    setIsMouseInside(false)
     setGradientPosition({ x: 50, y: 50 })
   }
 
@@ -33,6 +39,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className="relative pt-32 pb-20 lg:pt-32 lg:pb-32 overflow-hidden max-w-[1920px]
       bg-[radial-gradient(circle_at_top_left,rgba(11,34,92,0.20),transparent_30%),radial-gradient(circle_at_top_right,rgba(37,99,235,0.15),transparent_30%)]
@@ -55,13 +62,15 @@ export default function Hero() {
         ></div>
       </div>
 
-      <div
-        className="pointer-events-none absolute inset-0 z-[4] hidden lg:block"
-        style={{
-          background: `radial-gradient(circle 300px at var(--x) var(--y), rgba(255, 255, 255, 0.03) 0%, transparent 70%)`,
-          transition: "background 0.05s ease-out",
-        }}
-      />
+      {isMouseInside && (
+        <div
+          className="pointer-events-none absolute inset-0 z-[4] hidden lg:block"
+          style={{
+            background: `radial-gradient(circle 300px at var(--x) var(--y), rgba(255, 255, 255, 0.03) 0%, transparent 70%)`,
+            transition: "background 0.05s ease-out",
+          }}
+        />
+      )}
 
       <div className="pointer-events-none absolute right-[23%] bottom-[25%] z-[5] opacity-0 scale-[2.5] mix-blend-lighten hidden lg:block">
         <Image
@@ -83,33 +92,35 @@ export default function Hero() {
         />
       </div>
 
-      <div
-        className="pointer-events-none absolute inset-0 z-[5] hidden lg:block"
-        style={{
-          maskImage: `radial-gradient(circle 300px at var(--x) var(--y), rgba(0, 0, 0, 0.8) 0%, transparent 70%)`,
-          WebkitMaskImage: `radial-gradient(circle 300px at var(--x) var(--y), rgba(0, 0, 0, 0.8) 0%, transparent 70%)`,
-        }}
-      >
-        <div className="absolute right-[23%] bottom-[25%] scale-[2.5] mix-blend-lighten">
-          <Image
-            src={simboloFundo || "/placeholder.svg"}
-            alt="Símbolo Secoder"
-            width={400}
-            height={400}
-            className="object-contain opacity-5"
-          />
-        </div>
+      {isMouseInside && (
+        <div
+          className="pointer-events-none absolute inset-0 z-[5] hidden lg:block"
+          style={{
+            maskImage: `radial-gradient(circle 300px at var(--x) var(--y), rgba(0, 0, 0, 0.8) 0%, transparent 70%)`,
+            WebkitMaskImage: `radial-gradient(circle 300px at var(--x) var(--y), rgba(0, 0, 0, 0.8) 0%, transparent 70%)`,
+          }}
+        >
+          <div className="absolute right-[23%] bottom-[25%] scale-[2.5] mix-blend-lighten">
+            <Image
+              src={simboloFundo || "/placeholder.svg"}
+              alt="Símbolo Secoder"
+              width={400}
+              height={400}
+              className="object-contain opacity-5"
+            />
+          </div>
 
-        <div className="absolute right-[-12%] bottom-[75%] scale-[2.5] rotate-[55deg] mix-blend-lighten">
-          <Image
-            src={simboloFundo || "/placeholder.svg"}
-            alt="Símbolo Secoder"
-            width={400}
-            height={400}
-            className="object-contain opacity-5"
-          />
+          <div className="absolute right-[-12%] bottom-[75%] scale-[2.5] rotate-[55deg] mix-blend-lighten">
+            <Image
+              src={simboloFundo || "/placeholder.svg"}
+              alt="Símbolo Secoder"
+              width={400}
+              height={400}
+              className="object-contain opacity-5"
+            />
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
