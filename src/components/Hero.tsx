@@ -1,17 +1,21 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { MoveRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import simboloFundo from "../images/simbolo-fundo.svg"
+import Image from "next/image";
+import Link from "next/link";
+import { MoveRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import simboloFundo from "../images/simbolo-fundo.svg";
 import secoderHeader from "@/images/secoder-header.png";
-import secoderSentado from "@/images/secoder-sentado.png";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-32 lg:pb-32 overflow-hidden max-w-[1920px]">
+    <section
+      className="relative pt-32 pb-20 lg:pt-32 lg:pb-32 overflow-hidden max-w-[1920px]
+      bg-[radial-gradient(circle_at_top_left,rgba(11,34,92,0.20),transparent_30%),radial-gradient(circle_at_top_right,rgba(37,99,235,0.15),transparent_30%)]
+    "
+    >
       <div className="absolute inset-0 -z-10">
         <div
           className="absolute inset-0
@@ -65,7 +69,7 @@ export default function Hero() {
               </span>
             </Badge>
 
- <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl mt-2 font-headline font-medium tracking-tight animate-fade-in-down text-foreground">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl mt-2 font-headline font-medium tracking-tight animate-fade-in-down text-foreground">
               Em tempo real,
               <br />
               rápida detecção,
@@ -84,20 +88,41 @@ export default function Hero() {
             </h1>
 
             <p className="mt-6 max-w-xl mx-auto md:mx-0 text-base sm:text-lg text-muted-foreground animate-fade-in-up font-body font-normal">
-              Monitore em tempo real, detecte ameaças com rapidez e elimine riscos antes que se tornem problemas.
+              Monitore em tempo real, detecte ameaças com rapidez e elimine
+              riscos antes que se tornem problemas.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4 animate-fade-in-up">
-              <Button
-                size="lg"
-                asChild
-                className="w-full sm:w-auto transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 font-normal rounded-full bg-gray-900"
+              <a
+                href="#contact"
+                className="relative transition-all duration-300 rounded-full shadow-[inset_0px_1px_0px_rgba(255,255,255,0.09)] px-8 h-12 overflow-visible group bg-[#202124] hover:bg-[radial-gradient(circle_at_bottom_center,rgba(37,99,235,0.25)_0%,#202124_50%)] flex items-center justify-center gap-2 text-white font-medium w-full sm:w-auto"
               >
-                <Link href="#contact">
+                <span className="absolute inset-[-1px] rounded-full overflow-hidden pointer-events-none">
+                  <motion.span
+                    className="absolute inset-0 rounded-full border border-transparent [background:linear-gradient(#202124,#202124)_padding-box,conic-gradient(from_var(--angle),transparent_0%,transparent_85%,rgba(59,130,246,0.8)_90%,rgba(96,165,250,1)_95%,rgba(59,130,246,0.8)_100%,transparent_105%)_border-box]"
+                    style={
+                      {
+                        "--angle": "0deg",
+                      } as React.CSSProperties
+                    }
+                    animate={
+                      {
+                        "--angle": "360deg",
+                      } as any
+                    }
+                    transition={{
+                      duration: 3,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "linear",
+                    }}
+                  />
+                </span>
+
+                <span className="relative z-10 flex items-center gap-2">
                   Fale com um especialista
-                  <MoveRight />
-                </Link>
-              </Button>
+                  <MoveRight className="w-5 h-5" />
+                </span>
+              </a>
               <p className="transition-all duration-300 hover:scale-105">
                 <Link href="#faq">Tem dúvida?</Link>
               </p>
@@ -118,5 +143,5 @@ export default function Hero() {
 
       <div className="hidden sm:block pointer-events-none absolute inset-x-0 bottom-0 h-48 z-[30] bg-gradient-to-t from-background via-background/80 to-transparent" />
     </section>
-  )
+  );
 }

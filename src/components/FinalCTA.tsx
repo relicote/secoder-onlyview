@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import simboloFundo from "../images/simbolo-fundo.svg"
-import secoderSentado from "../images/secoder-sentado.svg"
+import secoderSentado from "../images/secoder-sentado.png"
 
 export default function FinalCTA() {
   return (
@@ -90,11 +90,11 @@ export default function FinalCTA() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 right-0 md:right-[60px] z-[50] pointer-events-none select-none hidden lg:block">
+      <div className="absolute bottom-0 right-0 md:right-[60px] z-[50] pointer-events-none select-none hidden lg:block bottom-[333]">
         <Image
           src={secoderSentado || "/placeholder.svg"}
           alt="Mascote Secoder"
-          className="w-[340px] md:w-[470px] lg:w-[880px] h-auto object-contain translate-y-[510px] translate-x-[-135px]"
+          className="w-[340px] md:w-[470px] lg:w-[780px] h-auto object-contain translate-y-[510px] translate-x-[-185px]"
           priority
         />
       </div>

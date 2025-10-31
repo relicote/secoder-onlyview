@@ -9,7 +9,7 @@ import dragClick from "../images/drag.svg";
 export default function PhishingTest() {
   return (
     <section className="py-12 md:py-20 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-6 md:gap-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-6 md:gap-8 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.25),transparent_60%)]">
         <div className="flex justify-center">
           <span className="inline-block px-2.5 py-1.5 mb-2 border border-[#191c24] bg-[#0e1016] rounded-full text-xs sm:text-sm text-[#D3E0FF] font-normal tracking-wide text-center">
             Secoder Especialistas em Pentest
@@ -73,6 +73,8 @@ export default function PhishingTest() {
             </div>
           </Card>
         </div>
+
+        <div className="w-full max-w-[1216px] mx-auto relative z-[3] bg-[radial-gradient(circle_at_bottom_center,rgba(37,99,235,0.25),transparent_70%)] mx-auto justify-center"></div>
 
         <div className="relative w-full max-w-[1216px] mx-auto bg-[#08090C] border-[rgba(255,255,255,0.08)] border-[1.5px] rounded-2xl md:rounded-[24px] overflow-hidden">
           {/* Vetor 1 */}
