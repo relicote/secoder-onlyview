@@ -90,7 +90,7 @@ export default function FinalCTA() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 right-0 md:right-[60px] z-[50] pointer-events-none select-none hidden lg:block bottom-[333]">
+      <div className="absolute right-0 md:right-[60px] z-[50] pointer-events-none select-none hidden lg:block bottom-[333]">
         <Image
           src={secoderSentado || "/placeholder.svg"}
           alt="Mascote Secoder"
