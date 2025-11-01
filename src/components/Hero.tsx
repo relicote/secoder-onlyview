@@ -1,20 +1,54 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import Link from "next/link";
-import { MoveRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import simboloFundo from "../images/simbolo-fundo.svg";
-import secoderHeader from "@/images/secoder-header.png";
-import { motion } from "framer-motion";
+import type React from "react"
+
+import Image from "next/image"
+import Link from "next/link"
+import { MoveRight } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { motion } from "framer-motion"
+import { useState, useRef } from "react"
+import secoderHeader from "@/images/secoder-header.png"
+import simboloFundo from "@/images/simbolo-fundo.svg"
 
 export default function Hero() {
+  const [gradientPosition, setGradientPosition] = useState({ x: 50, y: 50 })
+  const [isMouseInside, setIsMouseInside] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!sectionRef.current) return
+
+    const rect = sectionRef.current.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width) * 100
+    const y = ((e.clientY - rect.top) / rect.height) * 100
+
+    setGradientPosition({ x, y })
+  }
+
+  const handleMouseEnter = () => {
+    setIsMouseInside(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsMouseInside(false)
+  }
+
   return (
     <section
+      ref={sectionRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      onMouseEnter={handleMouseEnter}
       className="relative pt-32 pb-20 lg:pt-32 lg:pb-32 overflow-hidden max-w-[1920px]
       bg-[radial-gradient(circle_at_top_left,rgba(11,34,92,0.20),transparent_30%),radial-gradient(circle_at_top_right,rgba(37,99,235,0.15),transparent_30%)]
     "
+      style={
+        {
+          "--x": `${gradientPosition.x}%`,
+          "--y": `${gradientPosition.y}%`,
+        } as React.CSSProperties
+      }
     >
       <div className="absolute inset-0 -z-10">
         <div
@@ -27,7 +61,15 @@ export default function Hero() {
         ></div>
       </div>
 
-      <div className="pointer-events-none absolute right-[23%] bottom-[25%] z-[5] opacity-5 scale-[2.5] mix-blend-lighten hidden lg:block">
+      <div
+        className="pointer-events-none absolute inset-0 z-[4] hidden lg:block"
+        style={{
+          background: `radial-gradient(circle 300px at var(--x) var(--y), rgba(255, 255, 255, 0.03) 0%, transparent 70%)`,
+          transition: "background 0.05s ease-out",
+        }}
+      />
+
+      <div className="pointer-events-none absolute right-[23%] bottom-[25%] z-[5] opacity-0 scale-[2.5] mix-blend-lighten hidden lg:block">
         <Image
           src={simboloFundo || "/placeholder.svg"}
           alt="Símbolo Secoder"
@@ -37,7 +79,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="pointer-events-none absolute right-[-12%] bottom-[75%] z-[5] opacity-5 scale-[2.5] rotate-[55deg] mix-blend-lighten hidden lg:block">
+      <div className="pointer-events-none absolute right-[-12%] bottom-[75%] z-[5] opacity-0 scale-[2.5] rotate-[55deg] mix-blend-lighten hidden lg:block">
         <Image
           src={simboloFundo || "/placeholder.svg"}
           alt="Símbolo Secoder"
@@ -45,6 +87,34 @@ export default function Hero() {
           height={400}
           className="object-contain"
         />
+      </div>
+
+      <div
+        className="pointer-events-none absolute inset-0 z-[5] hidden lg:block"
+        style={{
+          maskImage: `radial-gradient(circle 300px at var(--x) var(--y), rgba(0, 0, 0, 0.8) 0%, transparent 70%)`,
+          WebkitMaskImage: `radial-gradient(circle 300px at var(--x) var(--y), rgba(0, 0, 0, 0.8) 0%, transparent 70%)`,
+        }}
+      >
+        <div className="absolute right-[23%] bottom-[25%] scale-[2.5] mix-blend-lighten">
+          <Image
+            src={simboloFundo || "/placeholder.svg"}
+            alt="Símbolo Secoder"
+            width={400}
+            height={400}
+            className="object-contain opacity-5"
+          />
+        </div>
+
+        <div className="absolute right-[-12%] bottom-[75%] scale-[2.5] rotate-[55deg] mix-blend-lighten">
+          <Image
+            src={simboloFundo || "/placeholder.svg"}
+            alt="Símbolo Secoder"
+            width={400}
+            height={400}
+            className="object-contain opacity-5"
+          />
+        </div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -75,21 +145,11 @@ export default function Hero() {
               rápida detecção,
               <span className="relative inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-b from-[#a7b9e8] from-5% to-[#7c98de] to-100% bg-clip-text text-transparent">
                 elimine riscos
-                {/* <span className="inline-flex items-center justify-center w-[60px] h-[34px] sm:w-[80px] sm:h-[45px] md:w-[90px] md:h-[51px] lg:w-[116px] lg:h-[65.51px] rounded-full bg-gradient-to-br from-[#0A0B0F] to-[#1A5CFF]/10 border border-[rgba(255,255,255,0.08)] shadow-[inset_0_2px_16px_rgba(255,255,255,0.04)]">
-                  <Image
-                    src={secoderSentado || "/placeholder.svg"}
-                    alt="Ícone Secoder"
-                    width={200}
-                    height={200}
-                    className="w-[40px] h-[40px] sm:w-[55px] sm:h-[55px] md:w-[65px] md:h-[65px] lg:w-[120px] lg:h-[120px] object-contain"
-                  />
-                </span> */}
               </span>
             </h1>
 
             <p className="mt-6 max-w-xl mx-auto md:mx-0 text-base sm:text-lg text-muted-foreground animate-fade-in-up font-body font-normal">
-              Monitore em tempo real, detecte ameaças com rapidez e elimine
-              riscos antes que se tornem problemas.
+              Monitore em tempo real, detecte ameaças com rapidez e elimine riscos antes que se tornem problemas.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4 animate-fade-in-up">
@@ -118,10 +178,10 @@ export default function Hero() {
                   />
                 </span>
 
-                <span className="relative z-10 flex items-center gap-2">
+                <button className="relative z-10 flex items-center gap-2">
                   Fale com um especialista
                   <MoveRight className="w-5 h-5" />
-                </span>
+                </button>
               </a>
               <p className="transition-all duration-300 hover:scale-105">
                 <Link href="#faq">Tem dúvida?</Link>
@@ -143,5 +203,5 @@ export default function Hero() {
 
       <div className="hidden sm:block pointer-events-none absolute inset-x-0 bottom-0 h-48 z-[30] bg-gradient-to-t from-background via-background/80 to-transparent" />
     </section>
-  );
+  )
 }
