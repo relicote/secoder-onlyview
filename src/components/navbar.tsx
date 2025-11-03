@@ -13,14 +13,15 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="container mx-auto flex h-[91px] w-full max-w-[1920px] items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex h-[91px] w-full max-w-[1920px] items-center justify-between px-4 sm:px-4 md:px-8">
         <Link href="/" className="md:hidden">
           <Image src={imageNavbar || "/placeholder.svg"} alt="Secoder Logo" width={140} height={34} />
         </Link>
 
-        <nav className="hidden md:flex items-center justify-center gap-8">
+        <nav className="hidden md:flex items-center justify-center lg:gap-6 md:gap-8 md:m-0">
           <Link href="/">
-            <Image src={imageNavbar || "/placeholder.svg"} alt="Secoder Logo" width={176} height={43} />
+            <Image src={imageNavbar || "/placeholder.svg"} alt="Secoder Logo" width={176} height={43}
+             className="h-auto sm:w-[140px] md:w-[156px] lg:w-[176px]"/>
           </Link>
           <Link href="#tools" className="text-sm text-foreground/80 hover:text-primary transition-colors">
             Nossas Ferramentas
@@ -33,12 +34,12 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden  md:hidden lg:block">
           <SocialMediaIcons />
         </div>
 
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger className="md:hidden p-2">
+          <SheetTrigger className="lg:hidden p-2">
             <Menu className="h-6 w-6 text-foreground/80" />
             <span className="sr-only">Toggle menu</span>
           </SheetTrigger>

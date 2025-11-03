@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import simboloFundo from "../images/simbolo-fundo.svg"
-import secoderSentado from "../images/secoder-sentado.png"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import simboloFundo from "../images/simbolo-fundo.svg";
+import secoderSentado from "../images/secoder-sentado.png";
 
 export default function FinalCTA() {
   return (
@@ -17,7 +17,8 @@ export default function FinalCTA() {
                 Venha conversar com nossa equipe!
               </h2>
               <p className="text-[14px] sm:text-[16px] md:text-[18px] leading-[150%] text-white/70 font-geist font-normal text-left">
-                Metodologia proprietária para pentest de urgência que combina técnicas avançadas de automação.
+                Metodologia proprietária para pentest de urgência que combina
+                técnicas avançadas de automação.
               </p>
             </div>
 
@@ -39,7 +40,11 @@ export default function FinalCTA() {
                     strokeWidth="1.5"
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 12h14m-6-6l6 6-6 6"
+                    />
                   </svg>
                 </Link>
               </Button>
@@ -88,16 +93,15 @@ export default function FinalCTA() {
             />
           </div>
         </div>
-      </div>
-
-      <div className="absolute right-0 md:right-[60px] z-[50] pointer-events-none select-none hidden lg:block bottom-[333]">
-        <Image
-          src={secoderSentado || "/placeholder.svg"}
-          alt="Mascote Secoder"
-          className="w-[340px] md:w-[470px] lg:w-[780px] h-auto object-contain translate-y-[510px] translate-x-[-185px]"
-          priority
-        />
+        <div className="absolute right-0  z-[50] pointer-events-none select-none hidden lg:block bottom-[333]">
+          <Image
+            src={secoderSentado || "/placeholder.svg"}
+            alt="Mascote Secoder"
+            className="md:hidden lg:block lg:w-[780px] h-auto object-contain translate-y-[510px] translate-x-[-185px]"
+            priority
+          />
+        </div>
       </div>
     </section>
-  )
+  );
 }

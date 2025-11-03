@@ -19,10 +19,10 @@ export default function Footer() {
         <Image
           src={logoFooter || "/placeholder.svg"}
           alt="Secoder Mascot"
-          className="max-w-[80px] sm:max-w-[100px] md:max-w-[112px] max-h-[104px] sm:max-h-[124px] md:max-h-[144px] pb-2 mx-auto sm:mx-0"
+          className="max-w-[80px] md:hidden lg:block sm:max-w-[100px] md:max-w-[112px] max-h-[104px] sm:max-h-[124px] md:max-h-[144px] pb-2 mx-auto sm:mx-0"
         />
 
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-4 text-center sm:text-left flex-1">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-4 text-center  flex-1">
           <div className="flex flex-col justify-end pb-2 sm:pb-4 gap-2 text-xs sm:text-sm text-muted-foreground">
             <span>contato@secoder.com.br</span>
           </div>
@@ -63,7 +63,7 @@ export default function Footer() {
               duration-300
               mx-auto"
       >
-        <h2 className="text-[#D3E0FF] text-[32px] sm:text-[40px] md:text-[48px] font-normal leading-[100%] tracking-tight">
+        <h2 className="text-[#D3E0FF] text-[24px] sm:text-[24px] md:text-[32px] lg:text-[48px] font-normal leading-[100%] tracking-tight sm:text-[24px]">
           Newsletter
         </h2>
         <form className="w-full md:flex-1 md:max-w-[539px]">

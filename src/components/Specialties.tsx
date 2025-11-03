@@ -13,12 +13,26 @@ const specialties = [
 
 export default function Specialties() {
   return (
-    <section id="specialties" className="py-20 bg-background">
+    <section id="specialties" className=" 
+    bg-background
+    pb-6 py-4 <!-- 📱 Base (mobile): margem superior menor -->
+    md:py-20                   <!-- 🖥️ Desktop (≥768px): espaçamento amplo -->
+    lg:py-20                     <!-- 🖥️+ (≥1024px): ainda mais folgado -->
+    ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-        <span className="mb-4 text-xs sm:text-sm text-[#FFFFFF] opacity-55 font-normal tracking-wide">
+        <span className="mb-4 pb-4 text-xs sm:text-sm text-[#FFFFFF] opacity-55 font-normal tracking-wide">
           Secoder Especialistas em Pentest
         </span>
-        <div className="mt-8 flex justify-center items-center flex-wrap gap-6 sm:gap-8 md:gap-12">
+        <div
+          className="
+            mt-6                           <!-- 📱 Base (mobile): margem superior menor -->
+            flex flex-wrap items-center justify-center
+            gap-4                          <!-- 📱 Espaçamento compacto entre itens -->
+            sm:gap-4                    <!-- 💻 Tablet (≥640px): mais respiro -->
+            md:gap-8                     <!-- 🖥️ Desktop (≥768px): espaçamento amplo -->
+            lg:gap-16                      <!-- 🖥️+ (≥1024px): ainda mais folgado -->
+          "
+        >
           {specialties.map((specialty, index) => {
             const image = PlaceHolderImages.find((img) => img.id === specialty.imageId)
             return (
