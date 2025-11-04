@@ -3,13 +3,6 @@ import { Toaster } from "@/components/ui/toaster";
 import './globals.css';
 import TypingTitle from '@/components/ui/typing-title';
 
-
-// export const metadata: Metadata = {
-//   title: 'Secoder',
-//   description: 'Real-time threat detection and risk elimination.',
-// };
-
-
 export default function RootLayout({
   children,
 }: Readonly<{

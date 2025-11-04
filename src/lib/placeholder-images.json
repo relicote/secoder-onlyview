@@ -9,31 +9,31 @@
     {
       "id": "tool-1",
       "description": "Teste de SVG",
-      "imageUrl": "/images/audit.svg",
+      "imageUrl": "../images/audit.svg",
       "imageHint": "network server"
     },
     {
       "id": "tool-2",
       "description": "Illustration for Vulnerability Scanner tool.",
-      "imageUrl": "/images/vigilant.svg",
+      "imageUrl": "../images/vigilant.svg",
       "imageHint": "security code"
     },
     {
       "id": "tool-3",
       "description": "Illustration for Phishing Simulator tool.",
-      "imageUrl": "/images/critic.svg",
+      "imageUrl": "../images/critic.svg",
       "imageHint": "phishing email"
     },
     {
       "id": "tool-4",
       "description": "Illustration for FAQ Knowledge Base tool.",
-      "imageUrl": "/images/alert.svg",
+      "imageUrl": "../images/alert.svg",
       "imageHint": "knowledge base"
     },
     {
       "id": "specialty-1",
       "description": "Placeholder logo for a certification.",
-      "imageUrl": "/images/certificacoes5.svg",
+      "imageUrl": "../images/certificacoes5.svg",
       "imageHint": "Certification"
     },
     {
