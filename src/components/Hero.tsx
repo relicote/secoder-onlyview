@@ -1,38 +1,44 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import Image from "next/image"
-import Link from "next/link"
-import { MoveRight } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { motion } from "framer-motion"
-import { useState, useRef } from "react"
-import secoderHeader from "@/images/secoder-header.png"
-import simboloFundo from "@/images/simbolo-fundo.svg"
+import Image from "next/image";
+import Link from "next/link";
+import { MoveRight } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import secoderHeader from "@/images/secoder-header.png";
+import simboloFundo from "@/images/simbolo-fundo.svg";
+import GlitchText from "./ui/shadcn-io/glitch-text";
+import ScrambleButton from "./ui/scramble-button";
+
 
 export default function Hero() {
-  const [gradientPosition, setGradientPosition] = useState({ x: 50, y: 50 })
-  const [isMouseInside, setIsMouseInside] = useState(false)
-  const sectionRef = useRef<HTMLDivElement>(null)
+  const [gradientPosition, setGradientPosition] = useState({ x: 50, y: 50 });
+  const [isMouseInside, setIsMouseInside] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!sectionRef.current) return
+    if (!sectionRef.current) return;
 
-    const rect = sectionRef.current.getBoundingClientRect()
-    const x = ((e.clientX - rect.left) / rect.width) * 100
-    const y = ((e.clientY - rect.top) / rect.height) * 100
+    const rect = sectionRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
 
-    setGradientPosition({ x, y })
-  }
+    setGradientPosition({ x, y });
+  };
 
   const handleMouseEnter = () => {
-    setIsMouseInside(true)
-  }
+    setIsMouseInside(true);
+  };
 
   const handleMouseLeave = () => {
-    setIsMouseInside(false)
-  }
+    setIsMouseInside(false);
+  };
+
+  
 
   return (
     <section
@@ -40,9 +46,8 @@ export default function Hero() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
-      className="relative pt-32 pb-20 lg:pt-32 lg:pb-32 overflow-hidden max-w-[1920px]
-      bg-[radial-gradient(circle_at_top_left,rgba(11,34,92,0.20),transparent_30%),radial-gradient(circle_at_top_right,rgba(37,99,235,0.15),transparent_30%)]
-    "
+      className="relative pt-32 pb-16 lg:pt-32 lg:pb-16 sm:pb-8 overflow-hidden max-w-[1920px]
+      bg-[radial-gradient(circle_at_top_left,rgba(11,34,92,0.20),transparent_30%),radial-gradient(circle_at_top_right,rgba(37,99,235,0.15),transparent_30%)]"
       style={
         {
           "--x": `${gradientPosition.x}%`,
@@ -143,13 +148,23 @@ export default function Hero() {
               Em tempo real,
               <br />
               rápida detecção,
-              <span className="relative inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-b from-[#a7b9e8] from-5% to-[#7c98de] to-100% bg-clip-text text-transparent">
-                elimine riscos
-              </span>
+<span
+  data-text="elimine riscos"
+  className="glitched-text relative inline-flex items-center gap-2 sm:gap-3 
+             bg-gradient-to-b from-[#a7b9e8] from-5% to-[#7c98de] to-100%
+             bg-clip-text text-transparent select-none"
+>
+  elimine riscos
+</span>
+
+
+
+
             </h1>
 
             <p className="mt-6 max-w-xl mx-auto md:mx-0 text-base sm:text-lg text-muted-foreground animate-fade-in-up font-body font-normal">
-              Monitore em tempo real, detecte ameaças com rapidez e elimine riscos antes que se tornem problemas.
+              Monitore em tempo real, detecte ameaças com rapidez e elimine
+              riscos antes que se tornem problemas.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4 animate-fade-in-up">
@@ -177,11 +192,7 @@ export default function Hero() {
                     }}
                   />
                 </span>
-
-                <button className="relative z-10 flex items-center gap-2">
-                  Fale com um especialista
-                  <MoveRight className="w-5 h-5" />
-                </button>
+                <ScrambleButton/>
               </a>
               <p className="transition-all duration-300 hover:scale-105">
                 <Link href="#faq">Tem dúvida?</Link>
@@ -196,12 +207,12 @@ export default function Hero() {
               className="w-[280px] sm:w-[350px] md:w-[400px] lg:w-[500px] h-auto object-contain"
               priority
             />
-            <div className="pointer-events-none absolute right-0 bottom-[-32px] z-[40] w-[125%] h-[200px] sm:h-[250px] lg:h-[300px] bg-[radial-gradient(120%_65%_at_75%_100%,hsl(var(--background))_0%,hsl(var(--background)/0.92)_35%,hsl(var(--background)/0.8)_55%,transparent_75%)]" />
+            <div className="pointer-events-none absolute right-0 bottom-[-32px] z-[40] w-[125%] h-[200px] sm:h-[250px] lg:h-[300px] bg-[radial-gradient(120%_65%_at_75%_100%,hsl(var(--background))_0%,hsl(var(--background)/0.92)_35%,hsl(var(--background)/0.8)_45%,transparent_75%)]" />
           </div>
         </div>
       </div>
 
-      <div className="hidden sm:block pointer-events-none absolute inset-x-0 bottom-0 h-48 z-[30] bg-gradient-to-t from-background via-background/80 to-transparent" />
+      <div className="hidden sm:block pointer-events-none absolute inset-x-0 bottom-0 h-48 sm:h-24 z-[30] bg-gradient-to-t from-background via-background/80 to-transparent" />
     </section>
-  )
+  );
 }

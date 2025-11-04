@@ -35,7 +35,7 @@ export default function SocialMediaIcons() {
         <Image
           src={tikTokIcon}
           alt="TikTok Icon"
-          className="h-5 w-5 text-foreground/80 text-white hover:text-[#095EE6] transition-colors"
+          className="h-5 w-5 text-foreground/80 text-white hover:text-primary transition-colors"
           data-ai-hint="TikTok"
         />
       </Link>
