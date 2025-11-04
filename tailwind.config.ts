@@ -7,6 +7,11 @@ export default {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+  'translate-y-[510px]',
+  'translate-x-[-185px]',
+  'bottom-[333px]'
+],
   theme: {
     extend: {
       fontSize: {
