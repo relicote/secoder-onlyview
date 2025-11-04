@@ -11,10 +11,14 @@ import { useState, useRef } from "react";
 import secoderHeader from "@/images/secoder-header.png";
 import simboloFundo from "@/images/simbolo-fundo.svg";
 import GlitchText from "./ui/shadcn-io/glitch-text";
+import ScrambleButton from "./ui/scramble-button";
+
+
 export default function Hero() {
   const [gradientPosition, setGradientPosition] = useState({ x: 50, y: 50 });
   const [isMouseInside, setIsMouseInside] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!sectionRef.current) return;
@@ -33,6 +37,8 @@ export default function Hero() {
   const handleMouseLeave = () => {
     setIsMouseInside(false);
   };
+
+  
 
   return (
     <section
@@ -142,15 +148,18 @@ export default function Hero() {
               Em tempo real,
               <br />
               rápida detecção,
-              <span className="relative inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-b from-[#a7b9e8] from-5% to-[#7c98de] to-80% bg-clip-text text-foreground">
-                elimine
-                <GlitchText
-                  className="glitch-text"
-                  data-text="Riscos"
-                >
-                  Riscos
-                </GlitchText>
-              </span>
+<span
+  data-text="elimine riscos"
+  className="glitched-text relative inline-flex items-center gap-2 sm:gap-3 
+             bg-gradient-to-b from-[#a7b9e8] from-5% to-[#7c98de] to-100%
+             bg-clip-text text-transparent select-none"
+>
+  elimine riscos
+</span>
+
+
+
+
             </h1>
 
             <p className="mt-6 max-w-xl mx-auto md:mx-0 text-base sm:text-lg text-muted-foreground animate-fade-in-up font-body font-normal">
@@ -183,11 +192,7 @@ export default function Hero() {
                     }}
                   />
                 </span>
-
-                <button className="relative z-10 flex items-center gap-2">
-                  Fale com um especialista
-                  <MoveRight className="w-5 h-5" />
-                </button>
+                <ScrambleButton/>
               </a>
               <p className="transition-all duration-300 hover:scale-105">
                 <Link href="#faq">Tem dúvida?</Link>
