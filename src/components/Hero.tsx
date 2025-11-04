@@ -12,13 +12,12 @@ import secoderHeader from "@/images/secoder-header.png";
 import simboloFundo from "@/images/simbolo-fundo.svg";
 import GlitchText from "./ui/shadcn-io/glitch-text";
 import ScrambleButton from "./ui/scramble-button";
-
+import secoderBolinha from "@/images/secoder-bolinha.svg";
 
 export default function Hero() {
   const [gradientPosition, setGradientPosition] = useState({ x: 50, y: 50 });
   const [isMouseInside, setIsMouseInside] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
-
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!sectionRef.current) return;
@@ -37,8 +36,6 @@ export default function Hero() {
   const handleMouseLeave = () => {
     setIsMouseInside(false);
   };
-
-  
 
   return (
     <section
@@ -148,17 +145,32 @@ export default function Hero() {
               Em tempo real,
               <br />
               rápida detecção,
-<span
+              <span
   data-text="elimine riscos"
-  className="glitched-text relative inline-flex items-center gap-2 sm:gap-3 
+  className="glitched-text relative inline-flex items-baseline gap-3 sm:gap-4
              bg-gradient-to-b from-[#a7b9e8] from-5% to-[#7c98de] to-100%
-             bg-clip-text text-transparent select-none"
+             bg-clip-text text-transparent select-none leading-[1] align-middle
+             ml-2 sm:ml-0"
 >
   elimine riscos
+
+<span
+  className="relative hidden lg:inline-flex items-center justify-center ml-4
+             w-[88px] h-[50px] sm:w-[116px] sm:h-[65.51px]
+             rounded-full border-[2.047px] border-white/10
+             bg-[linear-gradient(140.27deg,#C0D2FF_10.89%,#8FAFFF_87.42%)]
+             shadow-[inset_0_5.45882px_54.5882px_rgba(255,255,255,0.25)]
+             overflow-hidden flex-shrink-0 align-middle translate-y-[-6%]"
+>
+    <Image
+      src={secoderBolinha}
+      alt="Decorativo"
+      fill
+      className="object-contain"
+      priority
+    />
+  </span>
 </span>
-
-
-
 
             </h1>
 
@@ -192,7 +204,7 @@ export default function Hero() {
                     }}
                   />
                 </span>
-                <ScrambleButton/>
+                <ScrambleButton />
               </a>
               <p className="transition-all duration-300 hover:scale-105">
                 <Link href="#faq">Tem dúvida?</Link>
