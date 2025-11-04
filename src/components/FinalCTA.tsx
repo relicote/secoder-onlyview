@@ -198,14 +198,18 @@ export default function FinalCTA() {
             />
           </div>
         </div>
-        <div className="absolute right-0 mr-14  z-[50] pointer-events-none select-none hidden lg:block bottom-[333]">
-          <Image
-            src={secoderSentado || "/placeholder.svg"}
-            alt="Mascote Secoder"
-            className="md:hidden lg:block lg:w-[780px] h-auto object-contain translate-y-[510px] translate-x-[-185px]"
-            priority
-          />
-        </div>
+        <div className="absolute right-0 z-[50] pointer-events-none select-none hidden lg:block">
+  <Image
+    src={secoderSentado || "/placeholder.svg"}
+    alt="Mascote Secoder"
+    priority
+    className="
+      hidden lg:block
+      w-[780px] h-auto object-contain
+      lg:translate-y-[-485px] lg:translate-x-[-250px]
+    "
+  />
+</div>
       </div>
     </section>
   );
