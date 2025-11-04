@@ -11,7 +11,13 @@ import ScrambleButton from "./ui/scramble-button";
 class TextScramble {
   private el: HTMLElement;
   private chars = "!<>-_\\/[]{}—=+*^?#";
-  private queue: { from: string; to: string; start: number; end: number; char?: string }[] = [];
+  private queue: {
+    from: string;
+    to: string;
+    start: number;
+    end: number;
+    char?: string;
+  }[] = [];
   private frame = 0;
   private frameRequest = 0;
   private resolve: (() => void) | null = null;
@@ -30,8 +36,8 @@ class TextScramble {
     for (let i = 0; i < length; i++) {
       const from = oldText[i] || "";
       const to = newText[i] || "";
-      const start = Math.floor(Math.random() * 20); 
-      const end = start + Math.floor(Math.random() * 20); 
+      const start = Math.floor(Math.random() * 20);
+      const end = start + Math.floor(Math.random() * 20);
       this.queue.push({ from, to, start, end });
     }
 
@@ -79,8 +85,7 @@ class TextScramble {
 }
 
 export default function FinalCTA() {
-  
-const textRef = useRef<HTMLSpanElement | null>(null);
+  const textRef = useRef<HTMLSpanElement | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
@@ -102,7 +107,6 @@ const textRef = useRef<HTMLSpanElement | null>(null);
     };
   }, [isAnimating]);
 
-
   return (
     <section className="relative py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -120,35 +124,35 @@ const textRef = useRef<HTMLSpanElement | null>(null);
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 md:gap-4 mt-2 md:mt-4 w-full sm:w-auto">
               <Button
-      size="lg"
-      asChild
-      className="relative w-full sm:w-[249px] h-[48px]
+                size="lg"
+                asChild
+                className="relative w-full sm:w-[249px] h-[48px]
                  bg-gradient-to-b from-[rgba(16,16,16,0.04)] to-[rgba(23,23,23,0.12)]
                  shadow-[inset_0_1px_0_rgba(255,255,255,0.09)]
                  backdrop-blur-[16px] rounded-full overflow-hidden
                  transition-transform duration-300 hover:scale-105"
-    >
-      <Link
-        href="#contact"
-        className="flex items-center justify-center gap-3 text-[#F1F1EF]
+              >
+                <Link
+                  href="#contact"
+                  className="flex items-center justify-center gap-3 text-[#F1F1EF]
                    font-inter text-[14px] sm:text-[16px] select-none"
-      >
-        <span ref={textRef}>Fale com um especialista</span>
-        <svg
-          className="w-4 h-4 text-[#F1F1EF]"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M5 12h14m-6-6l6 6-6 6"
-          />
-        </svg>
-      </Link>
-    </Button>
+                >
+                  <span ref={textRef}>Fale com um especialista</span>
+                  <svg
+                    className="w-4 h-4 text-[#F1F1EF]"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 12h14m-6-6l6 6-6 6"
+                    />
+                  </svg>
+                </Link>
+              </Button>
 
               <Button
                 size="lg"
@@ -194,7 +198,7 @@ const textRef = useRef<HTMLSpanElement | null>(null);
             />
           </div>
         </div>
-        <div className="absolute right-0  z-[50] pointer-events-none select-none hidden lg:block bottom-[333]">
+        <div className="absolute right-0 mr-14  z-[50] pointer-events-none select-none hidden lg:block bottom-[333]">
           <Image
             src={secoderSentado || "/placeholder.svg"}
             alt="Mascote Secoder"
