@@ -7,9 +7,103 @@ import Image from "next/image";
 import logoAzul from "../images/secoder-azul.svg";
 import SocialMediaIcons from "./socialMediaIcons";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
+class TextScramble {
+  private el: HTMLElement;
+  private chars = "!<>-_\\/[]{}—=+*^?#";
+  private queue: { from: string; to: string; start: number; end: number; char?: string }[] = [];
+  private frame = 0;
+  private frameRequest = 0;
+  private resolve: (() => void) | null = null;
+
+  constructor(el: HTMLElement) {
+    this.el = el;
+    this.update = this.update.bind(this);
+  }
+
+  public setText(newText: string): Promise<void> {
+    const oldText = this.el.innerText;
+    const length = Math.max(oldText.length, newText.length);
+    const promise = new Promise<void>((resolve) => (this.resolve = resolve));
+
+    this.queue = [];
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || "";
+      const to = newText[i] || "";
+      const start = Math.floor(Math.random() * 20); 
+      const end = start + Math.floor(Math.random() * 20);
+      this.queue.push({ from, to, start, end });
+    }
+
+    cancelAnimationFrame(this.frameRequest);
+    this.frame = 0;
+    this.update();
+
+    return promise;
+  }
+
+  private update(): void {
+    let output = "";
+    let complete = 0;
+
+    for (let i = 0; i < this.queue.length; i++) {
+      const { from, to, start, end } = this.queue[i];
+      let { char } = this.queue[i];
+
+      if (this.frame >= end) {
+        complete++;
+        output += to;
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.3) {
+          char = this.randomChar();
+          this.queue[i].char = char;
+        }
+        output += `<span class="text-sky-300">${char}</span>`;
+      } else {
+        output += from;
+      }
+    }
+
+    this.el.innerHTML = output;
+    if (complete === this.queue.length) {
+      this.resolve?.();
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update);
+      this.frame++;
+    }
+  }
+
+   private randomChar(): string {
+    return this.chars[Math.floor(Math.random() * this.chars.length)];
+  }
+}
+
+
 export default function Footer() {
+
+const textRef = useRef<HTMLSpanElement | null>(null);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    if (!textRef.current) return;
+    const fx = new TextScramble(textRef.current);
+    const text = "Enviar";
+
+    const handleHover = async () => {
+      if (isAnimating) return;
+      setIsAnimating(true);
+      await fx.setText(text);
+      setIsAnimating(false);
+    };
+
+    const button = textRef.current.closest("button");
+    button?.addEventListener("mouseenter", handleHover);
+    return () => button?.removeEventListener("mouseenter", handleHover);
+  }, [isAnimating]);
+
+
   return (
     <footer
       id="contact"
@@ -84,35 +178,43 @@ export default function Footer() {
               className="px-4 py-3 sm:py-2 rounded-lg sm:rounded-none bg-transparent text-white placeholder-[#747B8C] focus:outline-none focus:caret-[#095EE6] flex-1 text-base md:text-lg"
             />
 
-            <button
-              className="relative transition-all duration-300 rounded-full shadow-[inset_0px_1px_0px_rgba(255,255,255,0.09)] px-8 h-12 overflow-visible group bg-[#202124] flex items-center gap-2 text-white font-medium"
-              type="submit"
-            >
-              <span className="absolute inset-[-1px] rounded-full overflow-hidden pointer-events-none  ">
-                <motion.span
-                  className="absolute inset-0 rounded-full  border border-transparent [background:linear-gradient(#202124,#202124)_padding-box,conic-gradient(from_var(--angle),transparent_0%,transparent_85%,rgba(59,130,246,0.8)_90%,rgba(96,165,250,1)_95%,rgba(59,130,246,0.8)_100%,transparent_105%)_border-box] "
-                  style={
-                    {
-                      "--angle": "0deg",
-                    } as React.CSSProperties
-                  }
-                  animate={
-                    {
-                      "--angle": "360deg",
-                    } as any
-                  }
-                  transition={{
-                    duration: 3,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "linear",
-                  }}
-                />
-              </span>
+ <button
+      type="submit"
+      className="relative transition-all duration-300 rounded-full shadow-[inset_0px_1px_0px_rgba(255,255,255,0.09)]
+                 px-8 h-12 overflow-visible group bg-[#202124] flex items-center gap-2
+                 text-white font-medium hover:scale-105"
+    >
+      <span className="absolute inset-[-1px] rounded-full overflow-hidden pointer-events-none">
+        <motion.span
+          className="absolute inset-0 rounded-full border border-transparent
+                     [background:linear-gradient(#202124,#202124)_padding-box,
+                     conic-gradient(from_var(--angle),transparent_0%,transparent_85%,
+                     rgba(59,130,246,0.8)_90%,rgba(96,165,250,1)_95%,
+                     rgba(59,130,246,0.8)_100%,transparent_105%)_border-box]"
+          style={
+            {
+              "--angle": "0deg",
+            } as React.CSSProperties
+          }
+          animate={
+            {
+              "--angle": "360deg",
+            } as any
+          }
+          transition={{
+            duration: 3,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "linear",
+          }}
+        />
+      </span>
 
-              {/* Button content */}
-              <span className="relative z-10 ">Enviar</span>
-              <ArrowRight className="relative z-10 w-5 h-5" />
-            </button>
+      {/* Conteúdo do botão */}
+      <span ref={textRef} className="relative z-10 select-none">
+        Enviar
+      </span>
+      <ArrowRight className="relative z-10 w-5 h-5" />
+    </button>
           </div>
         </form>
       </Card>

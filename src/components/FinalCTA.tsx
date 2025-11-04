@@ -1,12 +1,108 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import simboloFundo from "../images/simbolo-fundo.svg";
 import secoderSentado from "../images/secoder-sentado.png";
+import ScrambleButton from "./ui/scramble-button";
+
+class TextScramble {
+  private el: HTMLElement;
+  private chars = "!<>-_\\/[]{}—=+*^?#";
+  private queue: { from: string; to: string; start: number; end: number; char?: string }[] = [];
+  private frame = 0;
+  private frameRequest = 0;
+  private resolve: (() => void) | null = null;
+
+  constructor(el: HTMLElement) {
+    this.el = el;
+    this.update = this.update.bind(this);
+  }
+
+  public setText(newText: string): Promise<void> {
+    const oldText = this.el.innerText;
+    const length = Math.max(oldText.length, newText.length);
+    const promise = new Promise<void>((resolve) => (this.resolve = resolve));
+
+    this.queue = [];
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || "";
+      const to = newText[i] || "";
+      const start = Math.floor(Math.random() * 20); 
+      const end = start + Math.floor(Math.random() * 20); 
+      this.queue.push({ from, to, start, end });
+    }
+
+    cancelAnimationFrame(this.frameRequest);
+    this.frame = 0;
+    this.update();
+
+    return promise;
+  }
+
+  private update(): void {
+    let output = "";
+    let complete = 0;
+
+    for (let i = 0; i < this.queue.length; i++) {
+      const { from, to, start, end } = this.queue[i];
+      let { char } = this.queue[i];
+
+      if (this.frame >= end) {
+        complete++;
+        output += to;
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.3) {
+          char = this.randomChar();
+          this.queue[i].char = char;
+        }
+        output += `<span class="text-[#a7b9e8]">${char}</span>`;
+      } else {
+        output += from;
+      }
+    }
+
+    this.el.innerHTML = output;
+    if (complete === this.queue.length) {
+      this.resolve?.();
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update);
+      this.frame++;
+    }
+  }
+
+  private randomChar(): string {
+    return this.chars[Math.floor(Math.random() * this.chars.length)];
+  }
+}
 
 export default function FinalCTA() {
+  
+const textRef = useRef<HTMLSpanElement | null>(null);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    if (!textRef.current) return;
+
+    const fx = new TextScramble(textRef.current);
+    const text = "Fale com um especialista";
+
+    const handleHover = async () => {
+      if (isAnimating) return;
+      setIsAnimating(true);
+      await fx.setText(text);
+      setIsAnimating(false);
+    };
+
+    textRef.current.addEventListener("mouseenter", handleHover);
+    return () => {
+      textRef.current?.removeEventListener("mouseenter", handleHover);
+    };
+  }, [isAnimating]);
+
+
   return (
     <section className="relative py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -24,30 +120,35 @@ export default function FinalCTA() {
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 md:gap-4 mt-2 md:mt-4 w-full sm:w-auto">
               <Button
-                size="lg"
-                asChild
-                className="relative w-full sm:w-[249px] h-[48px] bg-gradient-to-b from-[rgba(16,16,16,0.04)] to-[rgba(23,23,23,0.12)] shadow-[inset_0_1px_0_rgba(255,255,255,0.09)] backdrop-blur-[16px] rounded-full overflow-hidden transition-transform duration-300 hover:scale-105"
-              >
-                <Link
-                  href="#contact"
-                  className="flex items-center justify-center gap-3 text-[#F1F1EF] font-inter text-[14px] sm:text-[16px]"
-                >
-                  Fale com um especialista
-                  <svg
-                    className="w-4 h-4 text-[#F1F1EF]"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 12h14m-6-6l6 6-6 6"
-                    />
-                  </svg>
-                </Link>
-              </Button>
+      size="lg"
+      asChild
+      className="relative w-full sm:w-[249px] h-[48px]
+                 bg-gradient-to-b from-[rgba(16,16,16,0.04)] to-[rgba(23,23,23,0.12)]
+                 shadow-[inset_0_1px_0_rgba(255,255,255,0.09)]
+                 backdrop-blur-[16px] rounded-full overflow-hidden
+                 transition-transform duration-300 hover:scale-105"
+    >
+      <Link
+        href="#contact"
+        className="flex items-center justify-center gap-3 text-[#F1F1EF]
+                   font-inter text-[14px] sm:text-[16px] select-none"
+      >
+        <span ref={textRef}>Fale com um especialista</span>
+        <svg
+          className="w-4 h-4 text-[#F1F1EF]"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M5 12h14m-6-6l6 6-6 6"
+          />
+        </svg>
+      </Link>
+    </Button>
 
               <Button
                 size="lg"
