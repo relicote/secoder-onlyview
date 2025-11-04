@@ -1,12 +1,13 @@
 import type {Metadata} from 'next';
 import { Toaster } from "@/components/ui/toaster";
 import './globals.css';
+import TypingTitle from '@/components/ui/typing-title';
 
 
-export const metadata: Metadata = {
-  title: 'Secoder Cyber Solutions',
-  description: 'Real-time threat detection and risk elimination.',
-};
+// export const metadata: Metadata = {
+//   title: 'Secoder',
+//   description: 'Real-time threat detection and risk elimination.',
+// };
 
 
 export default function RootLayout({
@@ -22,6 +23,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
+         <TypingTitle />
         {children}
         <Toaster />
       </body>
